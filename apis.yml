@@ -9,10 +9,10 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Email
-  - Email Testing
   - Email Delivery
-  - Transactional Email
   - Email Sandbox
+  - Email Testing
+  - Transactional Email
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mailtrap/refs/heads/main/apis.yml
 created: '2025-02-06'
@@ -29,8 +29,8 @@ apis:
     baseURL: https://send.api.mailtrap.io
     tags:
       - Email
-      - Transactional Email
       - REST API
+      - Transactional Email
     properties:
       - type: Documentation
         url: https://docs.mailtrap.io/developers
@@ -48,8 +48,8 @@ apis:
     baseURL: https://sandbox.api.mailtrap.io
     tags:
       - Email Testing
-      - Sandbox
       - QA
+      - Sandbox
     properties:
       - type: Documentation
         url: https://docs.mailtrap.io/docs/email-sandbox-overview
