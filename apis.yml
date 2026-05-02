@@ -16,7 +16,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mailtrap/refs/heads/main/apis.yml
 created: '2025-02-06'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: mailtrap:mailtrap-email-api
@@ -38,6 +38,8 @@ apis:
         url: https://api-docs.mailtrap.io/
       - type: Getting Started
         url: https://docs.mailtrap.io/docs/sending-emails-overview
+      - type: OpenAPI
+        url: openapi/mailtrap-email-api-openapi.yml
   - aid: mailtrap:mailtrap-email-sandbox
     name: Mailtrap Email Sandbox API
     description: >-
@@ -53,6 +55,8 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.mailtrap.io/docs/email-sandbox-overview
+      - type: OpenAPI
+        url: openapi/mailtrap-email-sandbox-openapi.yml
 common:
   - type: Portal
     url: https://mailtrap.io/

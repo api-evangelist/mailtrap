@@ -16,7 +16,7 @@ Mailtrap provides a RESTful email infrastructure API with high deliverability ra
 ## Timestamps
 
 - **Created:** 2025-02-06 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -35,6 +35,7 @@ The Mailtrap Email Sending API allows sending transactional and bulk emails with
 - [Documentation](https://docs.mailtrap.io/developers)
 - [Reference](https://api-docs.mailtrap.io/)
 - [Getting Started](https://docs.mailtrap.io/docs/sending-emails-overview)
+- [OpenAPI](openapi/mailtrap-email-api-openapi.yml)
 
 ### Mailtrap Email Sandbox API
 The Mailtrap Email Sandbox API provides a safe email testing environment to inspect and debug emails before sending to real recipients. Supports switching between sandbox and production modes in official SDKs.
@@ -49,6 +50,7 @@ The Mailtrap Email Sandbox API provides a safe email testing environment to insp
 #### Properties
 
 - [Documentation](https://docs.mailtrap.io/docs/email-sandbox-overview)
+- [OpenAPI](openapi/mailtrap-email-sandbox-openapi.yml)
 
 ## Common Properties
 
