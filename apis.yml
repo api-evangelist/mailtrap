@@ -36,7 +36,7 @@ apis:
         url: https://docs.mailtrap.io/developers
       - type: Reference
         url: https://api-docs.mailtrap.io/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.mailtrap.io/docs/sending-emails-overview
       - type: OpenAPI
         url: openapi/mailtrap-email-api-openapi.yml
@@ -62,19 +62,19 @@ common:
     url: https://mailtrap.io/
   - type: Documentation
     url: https://docs.mailtrap.io/
-  - type: Sign Up
+  - type: SignUp
     url: https://mailtrap.io/register/signup
   - type: Login
     url: https://mailtrap.io/users/sign_in
   - type: Pricing
     url: https://mailtrap.io/pricing/
-  - type: Status
+  - type: StatusPage
     url: https://status.mailtrap.io/
   - type: Support
     url: https://help.mailtrap.io/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://mailtrap.io/terms-of-use/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://mailtrap.io/privacy-policy/
 maintainers:
   - FN: Kin Lane
