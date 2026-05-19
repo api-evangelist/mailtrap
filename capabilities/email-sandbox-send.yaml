@@ -1,0 +1,88 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailtrap Email Sandbox API — Send
+  description: 'Mailtrap Email Sandbox API — Send. 1 operations. Lead operation: Send a test email to a sandbox inbox. Self-contained
+    Naftiko capability covering one Mailtrap business surface.'
+  tags:
+  - Mailtrap
+  - Send
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MAILTRAP_API_KEY: MAILTRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: email-sandbox-send
+    baseUri: https://sandbox.api.mailtrap.io
+    description: Mailtrap Email Sandbox API — Send business capability. Self-contained, no shared references.
+    resources:
+    - name: api-send-inbox_id
+      path: /api/send/{inbox_id}
+      operations:
+      - name: sendtosandboxinbox
+        method: POST
+        description: Send a test email to a sandbox inbox
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: inbox_id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Api-Token
+      value: '{{env.MAILTRAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: email-sandbox-send-rest
+    port: 8080
+    description: REST adapter for Mailtrap Email Sandbox API — Send. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/send/{inbox-id}
+      name: api-send-inbox-id
+      description: REST surface for api-send-inbox_id.
+      operations:
+      - method: POST
+        name: sendtosandboxinbox
+        description: Send a test email to a sandbox inbox
+        call: email-sandbox-send.sendtosandboxinbox
+        with:
+          inbox_id: rest.inbox_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: email-sandbox-send-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Mailtrap Email Sandbox API — Send. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: send-test-email-sandbox-inbox
+      description: Send a test email to a sandbox inbox
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: email-sandbox-send.sendtosandboxinbox
+      with:
+        inbox_id: tools.inbox_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

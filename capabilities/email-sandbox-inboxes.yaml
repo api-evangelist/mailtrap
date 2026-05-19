@@ -1,0 +1,323 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Mailtrap Email Sandbox API — Inboxes
+  description: 'Mailtrap Email Sandbox API — Inboxes. 8 operations. Lead operation: List sandbox inboxes. Self-contained Naftiko
+    capability covering one Mailtrap business surface.'
+  tags:
+  - Mailtrap
+  - Inboxes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MAILTRAP_API_KEY: MAILTRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: email-sandbox-inboxes
+    baseUri: https://sandbox.api.mailtrap.io
+    description: Mailtrap Email Sandbox API — Inboxes business capability. Self-contained, no shared references.
+    resources:
+    - name: api-accounts-account_id-inboxes
+      path: /api/accounts/{account_id}/inboxes
+      operations:
+      - name: listinboxes
+        method: GET
+        description: List sandbox inboxes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: account_id
+          in: path
+          type: integer
+          required: true
+    - name: api-accounts-account_id-inboxes-inbox_id
+      path: /api/accounts/{account_id}/inboxes/{inbox_id}
+      operations:
+      - name: getinbox
+        method: GET
+        description: Get a sandbox inbox
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteinbox
+        method: DELETE
+        description: Delete a sandbox inbox and all its emails
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateinbox
+        method: PATCH
+        description: Update inbox attributes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-accounts-account_id-inboxes-inbox_id-all_read
+      path: /api/accounts/{account_id}/inboxes/{inbox_id}/all_read
+      operations:
+      - name: markallread
+        method: PATCH
+        description: Mark all messages in the inbox as read
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-accounts-account_id-inboxes-inbox_id-clean
+      path: /api/accounts/{account_id}/inboxes/{inbox_id}/clean
+      operations:
+      - name: cleaninbox
+        method: PATCH
+        description: Remove all messages from an inbox
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-accounts-account_id-inboxes-inbox_id-reset_credentials
+      path: /api/accounts/{account_id}/inboxes/{inbox_id}/reset_credentials
+      operations:
+      - name: resetcredentials
+        method: PATCH
+        description: Reset SMTP credentials of the inbox
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-accounts-account_id-projects-project_id-inboxes
+      path: /api/accounts/{account_id}/projects/{project_id}/inboxes
+      operations:
+      - name: createinbox
+        method: POST
+        description: Create a sandbox inbox in a project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: account_id
+          in: path
+          type: integer
+          required: true
+        - name: project_id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Api-Token
+      value: '{{env.MAILTRAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: email-sandbox-inboxes-rest
+    port: 8080
+    description: REST adapter for Mailtrap Email Sandbox API — Inboxes. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/accounts/{account-id}/inboxes
+      name: api-accounts-account-id-inboxes
+      description: REST surface for api-accounts-account_id-inboxes.
+      operations:
+      - method: GET
+        name: listinboxes
+        description: List sandbox inboxes
+        call: email-sandbox-inboxes.listinboxes
+        with:
+          account_id: rest.account_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/accounts/{account-id}/inboxes/{inbox-id}
+      name: api-accounts-account-id-inboxes-inbox-id
+      description: REST surface for api-accounts-account_id-inboxes-inbox_id.
+      operations:
+      - method: GET
+        name: getinbox
+        description: Get a sandbox inbox
+        call: email-sandbox-inboxes.getinbox
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteinbox
+        description: Delete a sandbox inbox and all its emails
+        call: email-sandbox-inboxes.deleteinbox
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateinbox
+        description: Update inbox attributes
+        call: email-sandbox-inboxes.updateinbox
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/accounts/{account-id}/inboxes/{inbox-id}/all-read
+      name: api-accounts-account-id-inboxes-inbox-id-all-read
+      description: REST surface for api-accounts-account_id-inboxes-inbox_id-all_read.
+      operations:
+      - method: PATCH
+        name: markallread
+        description: Mark all messages in the inbox as read
+        call: email-sandbox-inboxes.markallread
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/accounts/{account-id}/inboxes/{inbox-id}/clean
+      name: api-accounts-account-id-inboxes-inbox-id-clean
+      description: REST surface for api-accounts-account_id-inboxes-inbox_id-clean.
+      operations:
+      - method: PATCH
+        name: cleaninbox
+        description: Remove all messages from an inbox
+        call: email-sandbox-inboxes.cleaninbox
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/accounts/{account-id}/inboxes/{inbox-id}/reset-credentials
+      name: api-accounts-account-id-inboxes-inbox-id-reset-credentials
+      description: REST surface for api-accounts-account_id-inboxes-inbox_id-reset_credentials.
+      operations:
+      - method: PATCH
+        name: resetcredentials
+        description: Reset SMTP credentials of the inbox
+        call: email-sandbox-inboxes.resetcredentials
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/accounts/{account-id}/projects/{project-id}/inboxes
+      name: api-accounts-account-id-projects-project-id-inboxes
+      description: REST surface for api-accounts-account_id-projects-project_id-inboxes.
+      operations:
+      - method: POST
+        name: createinbox
+        description: Create a sandbox inbox in a project
+        call: email-sandbox-inboxes.createinbox
+        with:
+          account_id: rest.account_id
+          project_id: rest.project_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: email-sandbox-inboxes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Mailtrap Email Sandbox API — Inboxes. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-sandbox-inboxes
+      description: List sandbox inboxes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.listinboxes
+      with:
+        account_id: tools.account_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-sandbox-inbox
+      description: Get a sandbox inbox
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.getinbox
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-sandbox-inbox-and-all
+      description: Delete a sandbox inbox and all its emails
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: email-sandbox-inboxes.deleteinbox
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-inbox-attributes
+      description: Update inbox attributes
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.updateinbox
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mark-all-messages-inbox-read
+      description: Mark all messages in the inbox as read
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.markallread
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-all-messages-inbox
+      description: Remove all messages from an inbox
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.cleaninbox
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: reset-smtp-credentials-inbox
+      description: Reset SMTP credentials of the inbox
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: email-sandbox-inboxes.resetcredentials
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-sandbox-inbox-project
+      description: Create a sandbox inbox in a project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: email-sandbox-inboxes.createinbox
+      with:
+        account_id: tools.account_id
+        project_id: tools.project_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
