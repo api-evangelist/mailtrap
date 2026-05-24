@@ -81,6 +81,8 @@ common:
     url: https://mailtrap.io/terms-of-use/
   - type: PrivacyPolicy
     url: https://mailtrap.io/privacy-policy/
+  - type: LLMsTxt
+    url: https://docs.mailtrap.io/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
