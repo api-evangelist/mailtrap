@@ -1,0 +1,595 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailtrap Email Sandbox API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Api-Token",
+      "value": "{{Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a test email to a sandbox inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.api.mailtrap.io/api/send/:inbox_id",
+            "params": [
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send an email into a specific sandbox inbox for inspection and debugging. Uses the same JSON body shape as the production send API."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Inboxes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sandbox inboxes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List sandbox inboxes"
+        },
+        {
+          "info": {
+            "name": "Create a sandbox inbox in a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/projects/:project_id/inboxes",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a sandbox inbox in a project"
+        },
+        {
+          "info": {
+            "name": "Get a sandbox inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a sandbox inbox"
+        },
+        {
+          "info": {
+            "name": "Update inbox attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update inbox attributes"
+        },
+        {
+          "info": {
+            "name": "Delete a sandbox inbox and all its emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a sandbox inbox and all its emails"
+        },
+        {
+          "info": {
+            "name": "Remove all messages from an inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/clean",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove all messages from an inbox"
+        },
+        {
+          "info": {
+            "name": "Mark all messages in the inbox as read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/all_read",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Mark all messages in the inbox as read"
+        },
+        {
+          "info": {
+            "name": "Reset SMTP credentials of the inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/reset_credentials",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reset SMTP credentials of the inbox"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List captured messages in an inbox",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List captured messages in an inbox"
+        },
+        {
+          "info": {
+            "name": "Get a captured message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a captured message"
+        },
+        {
+          "info": {
+            "name": "Update message attributes (e.g. mark read)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update message attributes (e.g. mark read)"
+        },
+        {
+          "info": {
+            "name": "Delete a captured message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a captured message"
+        },
+        {
+          "info": {
+            "name": "Forward a captured message to a confirmed recipient",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/forward",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Forward a captured message to a confirmed recipient"
+        },
+        {
+          "info": {
+            "name": "Get spam analysis for a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/spam_report",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get spam analysis for a message"
+        },
+        {
+          "info": {
+            "name": "Get HTML validation and compatibility report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/analyze",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get HTML validation and compatibility report"
+        },
+        {
+          "info": {
+            "name": "Get plain text body of a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/body.txt",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get plain text body of a message"
+        },
+        {
+          "info": {
+            "name": "Get HTML body of a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/body.html",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get HTML body of a message"
+        },
+        {
+          "info": {
+            "name": "Get raw message body",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/body.raw",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get raw message body"
+        },
+        {
+          "info": {
+            "name": "Download message in standard .eml format",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/body.eml",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download message in standard .eml format"
+        },
+        {
+          "info": {
+            "name": "Get email headers for a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.api.mailtrap.io/api/accounts/:account_id/inboxes/:inbox_id/messages/:message_id/mail_headers",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inbox_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get email headers for a message"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

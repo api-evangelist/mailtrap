@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mailtrap Email Sending API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a transactional email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://send.api.mailtrap.io/api/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a single transactional email in real time. Supports HTML and text bodies, attachments, headers, custom variables, and category tagging."
+        },
+        {
+          "info": {
+            "name": "Send batch emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://send.api.mailtrap.io/api/batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send up to 500 emails in a single request. A base message defines shared fields and per-recipient requests override or supplement them."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
