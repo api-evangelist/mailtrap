@@ -62,7 +62,7 @@ common:
     url: https://mailtrap.io/
   - type: Documentation
     url: https://docs.mailtrap.io/
-  - type: SignUp
+  - type: Signup
     url: https://mailtrap.io/register/signup
   - type: Login
     url: https://mailtrap.io/users/sign_in
@@ -76,7 +76,7 @@ common:
     url: https://mailtrap.io/terms-of-use/
   - type: PrivacyPolicy
     url: https://mailtrap.io/privacy-policy/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.mailtrap.io/llms.txt
 maintainers:
   - FN: Kin Lane
