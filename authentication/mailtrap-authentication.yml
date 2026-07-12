@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/mailtrap-email-api-openapi.yml, openapi/mailtrap-email-sandbox-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/mailtrap-email-api-openapi.yml
+- name: ApiTokenAuth
+  type: apiKey
+  in: header
+  parameter: Api-Token
+  sources:
+  - openapi/mailtrap-email-sandbox-openapi.yml

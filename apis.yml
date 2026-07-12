@@ -54,6 +54,10 @@ apis:
       - type: OpenAPI
         url: openapi/mailtrap-email-sandbox-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/mailtrap-domain-security.yml
+  - type: Authentication
+    url: authentication/mailtrap-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/mailtrap
   - type: LinkedIn
@@ -78,6 +82,8 @@ common:
     url: https://mailtrap.io/privacy-policy/
   - type: LlmsText
     url: https://docs.mailtrap.io/llms.txt
+  - type: Blog
+    url: https://mailtrap.io/blog/feed/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
