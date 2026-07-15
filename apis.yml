@@ -54,6 +54,8 @@ apis:
       - type: OpenAPI
         url: openapi/mailtrap-email-sandbox-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/mailtrap-agentic-access.yml
   - type: DomainSecurity
     url: security/mailtrap-domain-security.yml
   - type: Authentication
