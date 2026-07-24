@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: Mailtrap Email Sending Inboxes Messages API
+  description: The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.
+  version: '1.0'
+  contact:
+    name: Mailtrap Support
+    url: https://help.mailtrap.io/
+  termsOfService: https://mailtrap.io/terms-of-use/
+servers:
+- url: https://send.api.mailtrap.io
+  description: Transactional email production
+- url: https://bulk.api.mailtrap.io
+  description: Bulk stream production
+security:
+- BearerAuth: []
+tags:
+- name: Messages
+  description: Inspect captured messages
+paths:
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages:
+    get:
+      operationId: listMessages
+      summary: List captured messages in an inbox
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - name: page
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Paginated messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}:
+    get:
+      operationId: getMessage
+      summary: Get a captured message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Message details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    patch:
+      operationId: updateMessage
+      summary: Update message attributes (e.g. mark read)
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Message updated
+    delete:
+      operationId: deleteMessage
+      summary: Delete a captured message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '204':
+          description: Message deleted
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/forward:
+    post:
+      operationId: forwardMessage
+      summary: Forward a captured message to a confirmed recipient
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Message forwarded
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/spam_report:
+    get:
+      operationId: getSpamReport
+      summary: Get spam analysis for a message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Spam analysis report
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/analyze:
+    get:
+      operationId: getHtmlAnalyze
+      summary: Get HTML validation and compatibility report
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: HTML analysis report
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.txt:
+    get:
+      operationId: getMessageBodyText
+      summary: Get plain text body of a message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Plain text body
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.html:
+    get:
+      operationId: getMessageBodyHtml
+      summary: Get HTML body of a message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: HTML body
+          content:
+            text/html:
+              schema:
+                type: string
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.raw:
+    get:
+      operationId: getMessageBodyRaw
+      summary: Get raw message body
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Raw message
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.eml:
+    get:
+      operationId: getMessageEml
+      summary: Download message in standard .eml format
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: EML file
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/mail_headers:
+    get:
+      operationId: getMessageHeaders
+      summary: Get email headers for a message
+      tags:
+      - Messages
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Header collection
+components:
+  parameters:
+    MessageId:
+      name: message_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    AccountId:
+      name: account_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    InboxId:
+      name: inbox_id
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
+    Message:
+      type: object
+      properties:
+        id:
+          type: integer
+        inbox_id:
+          type: integer
+        subject:
+          type: string
+        sent_at:
+          type: string
+          format: date-time
+        from_email:
+          type: string
+        from_name:
+          type: string
+        to_email:
+          type: string
+        to_name:
+          type: string
+        is_read:
+          type: boolean
+        html_body_size:
+          type: integer
+        text_body_size:
+          type: integer
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Mailtrap Email API Documentation
+  url: https://docs.mailtrap.io/

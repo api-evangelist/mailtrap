@@ -1,0 +1,213 @@
+openapi: 3.1.0
+info:
+  title: Mailtrap Email Sending Inboxes API
+  description: The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.
+  version: '1.0'
+  contact:
+    name: Mailtrap Support
+    url: https://help.mailtrap.io/
+  termsOfService: https://mailtrap.io/terms-of-use/
+servers:
+- url: https://send.api.mailtrap.io
+  description: Transactional email production
+- url: https://bulk.api.mailtrap.io
+  description: Bulk stream production
+security:
+- BearerAuth: []
+tags:
+- name: Inboxes
+  description: Manage sandbox inboxes
+paths:
+  /api/accounts/{account_id}/inboxes:
+    get:
+      operationId: listInboxes
+      summary: List sandbox inboxes
+      tags:
+      - Inboxes
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Inbox list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Inbox'
+  /api/accounts/{account_id}/projects/{project_id}/inboxes:
+    post:
+      operationId: createInbox
+      summary: Create a sandbox inbox in a project
+      tags:
+      - Inboxes
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inbox:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+      responses:
+        '201':
+          description: Inbox created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inbox'
+  /api/accounts/{account_id}/inboxes/{inbox_id}:
+    get:
+      operationId: getInbox
+      summary: Get a sandbox inbox
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Inbox details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inbox'
+    delete:
+      operationId: deleteInbox
+      summary: Delete a sandbox inbox and all its emails
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      responses:
+        '204':
+          description: Inbox deleted
+    patch:
+      operationId: updateInbox
+      summary: Update inbox attributes
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Inbox updated
+  /api/accounts/{account_id}/inboxes/{inbox_id}/clean:
+    patch:
+      operationId: cleanInbox
+      summary: Remove all messages from an inbox
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Inbox cleaned
+  /api/accounts/{account_id}/inboxes/{inbox_id}/all_read:
+    patch:
+      operationId: markAllRead
+      summary: Mark all messages in the inbox as read
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Messages marked as read
+  /api/accounts/{account_id}/inboxes/{inbox_id}/reset_credentials:
+    patch:
+      operationId: resetCredentials
+      summary: Reset SMTP credentials of the inbox
+      tags:
+      - Inboxes
+      parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Credentials reset
+components:
+  schemas:
+    Inbox:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        username:
+          type: string
+        password:
+          type: string
+        max_size:
+          type: integer
+        status:
+          type: string
+        emails_count:
+          type: integer
+        emails_unread_count:
+          type: integer
+        last_message_sent_at:
+          type: string
+          format: date-time
+        smtp_ports:
+          type: array
+          items:
+            type: integer
+        pop3_ports:
+          type: array
+          items:
+            type: integer
+        domain:
+          type: string
+        project_id:
+          type: integer
+  parameters:
+    AccountId:
+      name: account_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    InboxId:
+      name: inbox_id
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Mailtrap Email API Documentation
+  url: https://docs.mailtrap.io/

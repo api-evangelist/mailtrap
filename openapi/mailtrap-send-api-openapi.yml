@@ -1,41 +1,30 @@
 openapi: 3.1.0
 info:
-  title: Mailtrap Email Sending API
-  description: >-
-    The Mailtrap Email Sending API allows sending transactional and bulk
-    emails with high deliverability. It follows REST principles and supports
-    authentication via API tokens, with all requests sent over HTTPS. The
-    API exposes a JSON-based send endpoint and a batch endpoint capable of
-    delivering up to 500 emails in a single request.
+  title: Mailtrap Email Sending Inboxes Send API
+  description: The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.
   version: '1.0'
   contact:
     name: Mailtrap Support
     url: https://help.mailtrap.io/
   termsOfService: https://mailtrap.io/terms-of-use/
-externalDocs:
-  description: Mailtrap Email API Documentation
-  url: https://docs.mailtrap.io/
 servers:
-  - url: https://send.api.mailtrap.io
-    description: Transactional email production
-  - url: https://bulk.api.mailtrap.io
-    description: Bulk stream production
+- url: https://send.api.mailtrap.io
+  description: Transactional email production
+- url: https://bulk.api.mailtrap.io
+  description: Bulk stream production
 security:
-  - BearerAuth: []
+- BearerAuth: []
 tags:
-  - name: Send
-    description: Send transactional and bulk emails
+- name: Send
+  description: Send transactional and bulk emails
 paths:
   /api/send:
     post:
       operationId: sendEmail
       summary: Send a transactional email
-      description: >-
-        Send a single transactional email in real time. Supports HTML and
-        text bodies, attachments, headers, custom variables, and category
-        tagging.
+      description: Send a single transactional email in real time. Supports HTML and text bodies, attachments, headers, custom variables, and category tagging.
       tags:
-        - Send
+      - Send
       requestBody:
         required: true
         content:
@@ -59,12 +48,9 @@ paths:
     post:
       operationId: sendBatchEmails
       summary: Send batch emails
-      description: >-
-        Send up to 500 emails in a single request. A base message defines
-        shared fields and per-recipient requests override or supplement
-        them.
+      description: Send up to 500 emails in a single request. A base message defines shared fields and per-recipient requests override or supplement them.
       tags:
-        - Send
+      - Send
       requestBody:
         required: true
         content:
@@ -82,24 +68,55 @@ paths:
           description: Validation error
         '401':
           description: Authentication failed
+  /api/send/{inbox_id}:
+    post:
+      operationId: sendToSandboxInbox
+      summary: Send a test email to a sandbox inbox
+      description: Send an email into a specific sandbox inbox for inspection and debugging. Uses the same JSON body shape as the production send API.
+      tags:
+      - Send
+      parameters:
+      - name: inbox_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendRequest_2'
+      responses:
+        '200':
+          description: Email captured by the sandbox inbox
+        '401':
+          description: Authentication failed
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
   schemas:
-    Address:
+    SendResponse:
       type: object
-      required: [email]
       properties:
-        email:
-          type: string
-          format: email
-        name:
-          type: string
+        success:
+          type: boolean
+        message_ids:
+          type: array
+          items:
+            type: string
+    BatchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/SendResponse'
     Attachment:
       type: object
-      required: [content, filename]
+      required:
+      - content
+      - filename
       properties:
         content:
           type: string
@@ -110,12 +127,40 @@ components:
           type: string
         disposition:
           type: string
-          enum: [attachment, inline]
+          enum:
+          - attachment
+          - inline
         content_id:
+          type: string
+    BatchRequest:
+      type: object
+      required:
+      - base
+      - requests
+      properties:
+        base:
+          $ref: '#/components/schemas/SendRequest'
+        requests:
+          type: array
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/BatchMessage'
+    Address:
+      type: object
+      required:
+      - email
+      properties:
+        email:
+          type: string
+          format: email
+        name:
           type: string
     SendRequest:
       type: object
-      required: [from, to, subject]
+      required:
+      - from
+      - to
+      - subject
       properties:
         from:
           $ref: '#/components/schemas/Address'
@@ -158,6 +203,25 @@ components:
         template_variables:
           type: object
           additionalProperties: true
+    SendRequest_2:
+      type: object
+      required:
+      - from
+      - to
+      - subject
+      properties:
+        from:
+          $ref: '#/components/schemas/Address'
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        subject:
+          type: string
+        text:
+          type: string
+        html:
+          type: string
     BatchMessage:
       type: object
       properties:
@@ -185,32 +249,10 @@ components:
           type: object
         template_variables:
           type: object
-    BatchRequest:
-      type: object
-      required: [base, requests]
-      properties:
-        base:
-          $ref: '#/components/schemas/SendRequest'
-        requests:
-          type: array
-          maxItems: 500
-          items:
-            $ref: '#/components/schemas/BatchMessage'
-    SendResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        message_ids:
-          type: array
-          items:
-            type: string
-    BatchResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/SendResponse'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Mailtrap Email API Documentation
+  url: https://docs.mailtrap.io/
