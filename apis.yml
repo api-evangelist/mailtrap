@@ -5,7 +5,20 @@ description: >-
   testing, and actionable analytics. It offers SDKs for smooth integration and supports both transactional sending and
   bulk email delivery.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mailtrap.png
 tags:
   - Email
   - Email Delivery
@@ -17,42 +30,60 @@ created: '2025-02-06'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: mailtrap:mailtrap-email-api
-    name: Mailtrap Email Sending API
-    description: >-
-      The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows
-      REST principles and supports authentication via API tokens, with all requests sent over HTTPS.
-    humanURL: https://mailtrap.io/email-api/
-    baseURL: https://send.api.mailtrap.io
-    tags:
-      - Email
-      - REST API
-      - Transactional Email
-    properties:
-      - type: Documentation
-        url: https://docs.mailtrap.io/developers
-      - type: Reference
-        url: https://api-docs.mailtrap.io/
-      - type: GettingStarted
-        url: https://docs.mailtrap.io/docs/sending-emails-overview
-      - type: OpenAPI
-        url: openapi/mailtrap-email-api-openapi.yml
-  - aid: mailtrap:mailtrap-email-sandbox
-    name: Mailtrap Email Sandbox API
-    description: >-
-      The Mailtrap Email Sandbox API provides a safe email testing environment to inspect and debug emails before
-      sending to real recipients. Supports switching between sandbox and production modes in official SDKs.
-    humanURL: https://mailtrap.io/automated-email-testing/
-    baseURL: https://sandbox.api.mailtrap.io
-    tags:
-      - Email Testing
-      - QA
-      - Sandbox
-    properties:
-      - type: Documentation
-        url: https://docs.mailtrap.io/docs/email-sandbox-overview
-      - type: OpenAPI
-        url: openapi/mailtrap-email-sandbox-openapi.yml
+- aid: mailtrap:mailtrap-inboxes-api
+  name: Mailtrap Inboxes API
+  description: Manage sandbox inboxes
+  humanURL: https://mailtrap.io/email-api/
+  baseURL: https://send.api.mailtrap.io
+  tags:
+  - Inboxes
+  properties:
+  - type: OpenAPI
+    url: openapi/mailtrap-inboxes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mailtrap.io/developers
+  - type: Reference
+    url: https://api-docs.mailtrap.io/
+  - type: GettingStarted
+    url: https://docs.mailtrap.io/docs/sending-emails-overview
+  - type: Documentation
+    url: https://docs.mailtrap.io/docs/email-sandbox-overview
+- aid: mailtrap:mailtrap-messages-api
+  name: Mailtrap Messages API
+  description: Inspect captured messages
+  humanURL: https://mailtrap.io/email-api/
+  baseURL: https://send.api.mailtrap.io
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/mailtrap-messages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mailtrap.io/developers
+  - type: Reference
+    url: https://api-docs.mailtrap.io/
+  - type: GettingStarted
+    url: https://docs.mailtrap.io/docs/sending-emails-overview
+  - type: Documentation
+    url: https://docs.mailtrap.io/docs/email-sandbox-overview
+- aid: mailtrap:mailtrap-send-api
+  name: Mailtrap Send API
+  description: Send transactional and bulk emails
+  humanURL: https://mailtrap.io/email-api/
+  baseURL: https://send.api.mailtrap.io
+  tags:
+  - Send
+  properties:
+  - type: OpenAPI
+    url: openapi/mailtrap-send-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mailtrap.io/developers
+  - type: Reference
+    url: https://api-docs.mailtrap.io/
+  - type: GettingStarted
+    url: https://docs.mailtrap.io/docs/sending-emails-overview
+  - type: Documentation
+    url: https://docs.mailtrap.io/docs/email-sandbox-overview
 common:
   - type: AgenticAccess
     url: agentic-access/mailtrap-agentic-access.yml
