@@ -1,0 +1,498 @@
+openapi: 3.1.0
+info:
+  title: Mailtrap Email Sandbox API
+  description: >-
+    The Mailtrap Email Sandbox API provides a safe email testing environment
+    to inspect and debug emails before sending to real recipients. The API
+    supports sending test emails into virtual inboxes, then retrieving,
+    analyzing, and managing those captured messages. Sandbox endpoints
+    cover messages, inboxes, projects, spam reports, HTML analysis, and
+    raw or formatted message bodies.
+  version: '1.0'
+  contact:
+    name: Mailtrap Support
+    url: https://help.mailtrap.io/
+  termsOfService: https://mailtrap.io/terms-of-use/
+externalDocs:
+  description: Mailtrap Email Sandbox Documentation
+  url: https://docs.mailtrap.io/
+servers:
+  - url: https://sandbox.api.mailtrap.io
+    description: Sandbox API
+  - url: https://mailtrap.io
+    description: Mailtrap management API
+security:
+  - ApiTokenAuth: []
+tags:
+  - name: Send
+    description: Send emails into a sandbox inbox
+  - name: Inboxes
+    description: Manage sandbox inboxes
+  - name: Messages
+    description: Inspect captured messages
+paths:
+  /api/send/{inbox_id}:
+    post:
+      operationId: sendToSandboxInbox
+      summary: Send a test email to a sandbox inbox
+      description: >-
+        Send an email into a specific sandbox inbox for inspection and
+        debugging. Uses the same JSON body shape as the production send API.
+      tags:
+        - Send
+      parameters:
+        - name: inbox_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendRequest'
+      responses:
+        '200':
+          description: Email captured by the sandbox inbox
+        '401':
+          description: Authentication failed
+  /api/accounts/{account_id}/inboxes:
+    get:
+      operationId: listInboxes
+      summary: List sandbox inboxes
+      tags:
+        - Inboxes
+      parameters:
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Inbox list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Inbox'
+  /api/accounts/{account_id}/projects/{project_id}/inboxes:
+    post:
+      operationId: createInbox
+      summary: Create a sandbox inbox in a project
+      tags:
+        - Inboxes
+      parameters:
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: project_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inbox:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+      responses:
+        '201':
+          description: Inbox created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inbox'
+  /api/accounts/{account_id}/inboxes/{inbox_id}:
+    get:
+      operationId: getInbox
+      summary: Get a sandbox inbox
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Inbox details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inbox'
+    delete:
+      operationId: deleteInbox
+      summary: Delete a sandbox inbox and all its emails
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      responses:
+        '204':
+          description: Inbox deleted
+    patch:
+      operationId: updateInbox
+      summary: Update inbox attributes
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Inbox updated
+  /api/accounts/{account_id}/inboxes/{inbox_id}/clean:
+    patch:
+      operationId: cleanInbox
+      summary: Remove all messages from an inbox
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Inbox cleaned
+  /api/accounts/{account_id}/inboxes/{inbox_id}/all_read:
+    patch:
+      operationId: markAllRead
+      summary: Mark all messages in the inbox as read
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Messages marked as read
+  /api/accounts/{account_id}/inboxes/{inbox_id}/reset_credentials:
+    patch:
+      operationId: resetCredentials
+      summary: Reset SMTP credentials of the inbox
+      tags:
+        - Inboxes
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+      responses:
+        '200':
+          description: Credentials reset
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages:
+    get:
+      operationId: listMessages
+      summary: List captured messages in an inbox
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Paginated messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}:
+    get:
+      operationId: getMessage
+      summary: Get a captured message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Message details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+    patch:
+      operationId: updateMessage
+      summary: Update message attributes (e.g. mark read)
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Message updated
+    delete:
+      operationId: deleteMessage
+      summary: Delete a captured message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '204':
+          description: Message deleted
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/forward:
+    post:
+      operationId: forwardMessage
+      summary: Forward a captured message to a confirmed recipient
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Message forwarded
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/spam_report:
+    get:
+      operationId: getSpamReport
+      summary: Get spam analysis for a message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Spam analysis report
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/analyze:
+    get:
+      operationId: getHtmlAnalyze
+      summary: Get HTML validation and compatibility report
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: HTML analysis report
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.txt:
+    get:
+      operationId: getMessageBodyText
+      summary: Get plain text body of a message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Plain text body
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.html:
+    get:
+      operationId: getMessageBodyHtml
+      summary: Get HTML body of a message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: HTML body
+          content:
+            text/html:
+              schema:
+                type: string
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.raw:
+    get:
+      operationId: getMessageBodyRaw
+      summary: Get raw message body
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Raw message
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/body.eml:
+    get:
+      operationId: getMessageEml
+      summary: Download message in standard .eml format
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: EML file
+  /api/accounts/{account_id}/inboxes/{inbox_id}/messages/{message_id}/mail_headers:
+    get:
+      operationId: getMessageHeaders
+      summary: Get email headers for a message
+      tags:
+        - Messages
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/InboxId'
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Header collection
+components:
+  securitySchemes:
+    ApiTokenAuth:
+      type: apiKey
+      in: header
+      name: Api-Token
+  parameters:
+    AccountId:
+      name: account_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    InboxId:
+      name: inbox_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    MessageId:
+      name: message_id
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
+    Address:
+      type: object
+      required: [email]
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+    SendRequest:
+      type: object
+      required: [from, to, subject]
+      properties:
+        from:
+          $ref: '#/components/schemas/Address'
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        subject:
+          type: string
+        text:
+          type: string
+        html:
+          type: string
+    Inbox:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        username:
+          type: string
+        password:
+          type: string
+        max_size:
+          type: integer
+        status:
+          type: string
+        emails_count:
+          type: integer
+        emails_unread_count:
+          type: integer
+        last_message_sent_at:
+          type: string
+          format: date-time
+        smtp_ports:
+          type: array
+          items:
+            type: integer
+        pop3_ports:
+          type: array
+          items:
+            type: integer
+        domain:
+          type: string
+        project_id:
+          type: integer
+    Message:
+      type: object
+      properties:
+        id:
+          type: integer
+        inbox_id:
+          type: integer
+        subject:
+          type: string
+        sent_at:
+          type: string
+          format: date-time
+        from_email:
+          type: string
+        from_name:
+          type: string
+        to_email:
+          type: string
+        to_name:
+          type: string
+        is_read:
+          type: boolean
+        html_body_size:
+          type: integer
+        text_body_size:
+          type: integer

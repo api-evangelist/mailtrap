@@ -1,0 +1,18 @@
+{
+  "provider": "mailtrap",
+  "sources": [
+    "mailtrap-inboxes-api-openapi.yml",
+    "mailtrap-messages-api-openapi.yml",
+    "mailtrap-send-api-openapi.yml"
+  ],
+  "outputs": [
+    "mailtrap-inboxes-api-openapi.yml",
+    "mailtrap-messages-api-openapi.yml",
+    "mailtrap-send-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
