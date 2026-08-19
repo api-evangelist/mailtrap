@@ -1,0 +1,931 @@
+{
+  "item": [
+    {
+      "id": "d1e780c4-163e-4847-a616-977ae284dd4d",
+      "name": "Inboxes",
+      "description": {
+        "content": "Manage sandbox inboxes",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17886298-8dfe-4f6d-98d9-93d2146491f8",
+          "name": "List sandbox inboxes",
+          "request": {
+            "name": "List sandbox inboxes",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f2b998d-8710-4f64-921b-b122224e7725",
+              "name": "Inbox list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2591,\n    \"name\": \"string\",\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"max_size\": 809,\n    \"status\": \"string\",\n    \"emails_count\": 409,\n    \"emails_unread_count\": 9473,\n    \"last_message_sent_at\": \"2012-10-26T22:22:39.788Z\",\n    \"smtp_ports\": [\n      1952,\n      5208\n    ],\n    \"pop3_ports\": [\n      6025,\n      169\n    ],\n    \"domain\": \"string\",\n    \"project_id\": 4081\n  },\n  {\n    \"id\": 1794,\n    \"name\": \"string\",\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"max_size\": 936,\n    \"status\": \"string\",\n    \"emails_count\": 6041,\n    \"emails_unread_count\": 3609,\n    \"last_message_sent_at\": \"1992-07-07T17:29:39.841Z\",\n    \"smtp_ports\": [\n      9567,\n      7216\n    ],\n    \"pop3_ports\": [\n      3694,\n      1664\n    ],\n    \"domain\": \"string\",\n    \"project_id\": 1815\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b425416-0987-414a-98c6-8a0c5e5bcbe2",
+          "name": "Create a sandbox inbox in a project",
+          "request": {
+            "name": "Create a sandbox inbox in a project",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "projects",
+                ":project_id",
+                "inboxes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "project_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"inbox\": {\n    \"name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "50757c34-a240-45d2-a497-4812f101e54a",
+              "name": "Inbox created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "projects",
+                    ":project_id",
+                    "inboxes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbox\": {\n    \"name\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5511,\n  \"name\": \"string\",\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"max_size\": 4231,\n  \"status\": \"string\",\n  \"emails_count\": 551,\n  \"emails_unread_count\": 3840,\n  \"last_message_sent_at\": \"2021-12-03T21:03:05.633Z\",\n  \"smtp_ports\": [\n    7497,\n    1455\n  ],\n  \"pop3_ports\": [\n    7729,\n    1293\n  ],\n  \"domain\": \"string\",\n  \"project_id\": 799\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bfc51df-00a3-4bb4-92d7-9497d748a134",
+          "name": "Get a sandbox inbox",
+          "request": {
+            "name": "Get a sandbox inbox",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a14780e-7d30-4717-b28a-2c5f942c44b6",
+              "name": "Inbox details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5511,\n  \"name\": \"string\",\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"max_size\": 4231,\n  \"status\": \"string\",\n  \"emails_count\": 551,\n  \"emails_unread_count\": 3840,\n  \"last_message_sent_at\": \"2021-12-03T21:03:05.633Z\",\n  \"smtp_ports\": [\n    7497,\n    1455\n  ],\n  \"pop3_ports\": [\n    7729,\n    1293\n  ],\n  \"domain\": \"string\",\n  \"project_id\": 799\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10ac7b14-a73c-42f1-ba64-738f725736b7",
+          "name": "Delete a sandbox inbox and all its emails",
+          "request": {
+            "name": "Delete a sandbox inbox and all its emails",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9b2513d-bc74-404b-a79d-16dd2c403776",
+              "name": "Inbox deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f0dc4c3-3b3b-4dd1-9d60-c90c63a9e3fa",
+          "name": "Update inbox attributes",
+          "request": {
+            "name": "Update inbox attributes",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5f2ff72-5323-4e65-91e9-0cc96a5265e5",
+              "name": "Inbox updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03ef4081-a416-41a6-afdb-6381360a6002",
+          "name": "Remove all messages from an inbox",
+          "request": {
+            "name": "Remove all messages from an inbox",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id",
+                "clean"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edac1eae-51ab-4313-bfd6-575895fafb17",
+              "name": "Inbox cleaned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id",
+                    "clean"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95b75d12-599c-4515-b611-88bcbef98fc3",
+          "name": "Mark all messages in the inbox as read",
+          "request": {
+            "name": "Mark all messages in the inbox as read",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id",
+                "all_read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da5e0329-45c0-46a0-9dfc-5921335d6a1c",
+              "name": "Messages marked as read",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id",
+                    "all_read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bfd4e0a-0d95-4618-9c75-6df729287cee",
+          "name": "Reset SMTP credentials of the inbox",
+          "request": {
+            "name": "Reset SMTP credentials of the inbox",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                ":account_id",
+                "inboxes",
+                ":inbox_id",
+                "reset_credentials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bb6ce45-0f29-4711-84ea-097883afc3cb",
+              "name": "Credentials reset",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    ":account_id",
+                    "inboxes",
+                    ":inbox_id",
+                    "reset_credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://send.api.mailtrap.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12eca448-7e0e-484a-8637-1037c974cbd0",
+    "name": "Mailtrap Email Sending Inboxes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.\n\nContact Support:\n Name: Mailtrap Support",
+      "type": "text/plain"
+    }
+  }
+}

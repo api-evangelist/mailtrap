@@ -1,0 +1,256 @@
+# Mailtrap Help Center
+
+## Documentation
+
+- [Documentation](https://docs.mailtrap.io/readme.md): Complete email infrastructure for developers. Send production emails, test in sandbox, and run email campaigns - all in one platform.
+- [Email API/SMTP](https://docs.mailtrap.io/getting-started/email-api-smtp.md): Send transactional and bulk emails from your app using the Mailtrap Email API
+- [Email Sandbox](https://docs.mailtrap.io/getting-started/email-sandbox.md): Learn how to inspect and debug emails with Mailtrap Email Sandbox
+- [Email Marketing](https://docs.mailtrap.io/getting-started/email-marketing.md): Learn how to set up and send email marketing campaigns with Mailtrap
+- [AI Onboarding](https://docs.mailtrap.io/ai-onboarding.md): Easy-to-follow documentation to onboard your AI agent to Mailtrap.
+- [Tools](https://docs.mailtrap.io/tools.md)
+- [MCP Server](https://docs.mailtrap.io/tools/mcp-server.md)
+- [CLI app](https://docs.mailtrap.io/tools/mailtrap-cli-app.md)
+- [Skills](https://docs.mailtrap.io/tools/skills.md)
+- [Prompts](https://docs.mailtrap.io/tools/prompts.md)
+- [AI inbox](https://docs.mailtrap.io/tools/ai-inbox.md)
+- [Overview](https://docs.mailtrap.io/email-api-smtp/overview.md): Overview of Mailtrap Email API and SMTP service: key features, use cases, and target audience.
+- [Setup & Configuration](https://docs.mailtrap.io/email-api-smtp/setup.md): Set up and configure Mailtrap email API and SMTP service and start sending emails in minutes.
+- [Domain Setup](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain.md): Set up your domain in Mailtrap. Add DNS records, verify SPF/DKIM/DMARC, pass compliance, and start sending emails in minutes.
+- [AWS Route 53](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/aws-route-53.md): Verify your Mailtrap sending domain in AWS Route 53. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [Cloudflare](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/cloudflare.md): Verify your Mailtrap sending domain in Cloudflare. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [DigitalOcean](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/digitalocean.md): Verify your Mailtrap sending domain in Digital Ocean. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [GoDaddy](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/godaddy.md): Verify your Mailtrap sending domain in GoDaddy. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [Google Cloud DNS](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/google-cloud-dns.md): Verify your Mailtrap sending domain in Google Cloud DNS. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [Namecheap](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/namecheap.md): Verify your Mailtrap sending domain in Namecheap. Add DNS records for DKIM/DMARC verification, pass compliance, and start sending emails.
+- [Squarespace](https://docs.mailtrap.io/email-api-smtp/setup/sending-domain/squarespace.md)
+- [API Integration](https://docs.mailtrap.io/email-api-smtp/setup/api-integration.md): Integrate Mailtrap email API. Get API credentials, choose transactional or bulk sending, use SDKs or code samples, and start sending.
+- [API Tokens](https://docs.mailtrap.io/email-api-smtp/setup/api-tokens.md): Learn how to create, manage, and use API tokens for Email API/SMTP.
+- [SMTP Integration](https://docs.mailtrap.io/email-api-smtp/setup/smtp-integration.md): Integrate Mailtrap SMTP. Get SMTP credentials, choose transactional or bulk sending, use code samples, and start sending.
+- [Bulk Stream](https://docs.mailtrap.io/email-api-smtp/setup/bulk-stream.md): Integrate Mailtrap Bulk Stream via API or SMTP. Get credentials, use SDKs or code samples, and send promotional emails with built-in compliance features.
+- [Sending Limits](https://docs.mailtrap.io/email-api-smtp/setup/sending-limits.md): Learn Mailtrap email sending limits: hourly, daily, connection, and email size. Understand what happens when limits are reached and how to upgrade.
+- [Email Templates](https://docs.mailtrap.io/email-api-smtp/email-templates.md): Create and send Mailtrap email templates with drag-and-drop builder or HTML editor, add Handlebars variables, and integrate via API or SMTP.
+- [Editing and Customizing](https://docs.mailtrap.io/email-api-smtp/email-templates/editing-and-customizing.md): Learn how to edit and customize email templates using Details, Drag & Drop Editor, Code Editor, and test your templates.
+- [Handlebars Guide](https://docs.mailtrap.io/email-api-smtp/email-templates/handlebars.md): Complete guide to using Handlebars templating language with Mailtrap Email Templates, including syntax examples, helpers, and practical use cases.
+- [Integration](https://docs.mailtrap.io/email-api-smtp/email-templates/integration.md): Learn how to integrate Mailtrap email templates with Email API/SMTP using Transactional or Bulk streams.
+- [Debugging with Sandbox](https://docs.mailtrap.io/email-api-smtp/email-templates/debugging.md): Learn how to test and debug your email templates using Mailtrap Email Sandbox.
+- [Migrate templates](https://docs.mailtrap.io/email-api-smtp/email-templates/migrate-templates.md)
+- [Analytics & Reports](https://docs.mailtrap.io/email-api-smtp/analytics.md): Learn what statistics Mailtrap provides: Stats dashboard, Email logs, Email categories, Mailbox providers.
+- [Stats Dashboard](https://docs.mailtrap.io/email-api-smtp/analytics/dashboard.md): Understand Mailtrap stats dashboard: delivery, open, click, bounce, and spam rates. Learn about domain filtering, warning thresholds, and metric calculations.
+- [Email Logs](https://docs.mailtrap.io/email-api-smtp/analytics/logs.md): Understand Mailtrap email logs: search and filter sent emails by status, events, and provider. View event history, previews, HTML source, and spam analysis.
+- [Email Categories](https://docs.mailtrap.io/email-api-smtp/analytics/categories.md): Understand Mailtrap email categories: organize email types like welcome, onboarding, or billing. Track performance, analyze metrics, and compare categories.
+- [Mailbox Providers](https://docs.mailtrap.io/email-api-smtp/analytics/mailbox-providers.md): Analyze email performance by mailbox providers like Gmail, Outlook, and Yahoo. Filter by domain and category, track metrics, and identify deliverability issues.
+- [Statuses and Events](https://docs.mailtrap.io/email-api-smtp/analytics/statuses-and-events.md): Learn about Mailtrap statuses and events: delivery, bounces, opens, clicks, and opt-outs. Understand how statuses differ from events and track performance.
+- [Deliverability Features](https://docs.mailtrap.io/email-api-smtp/deliverability.md): Learn about email deliverability features and tools Mailtrap provides to guarantee high inbox placement rates of your emails.
+- [Suppressions List](https://docs.mailtrap.io/email-api-smtp/deliverability/suppressions-list.md): Manage Mailtrap suppression lists. View, add, remove, or import suppressed emails from hard bounces, unsubscribes, and spam complaints via CSV or manually.
+- [Dedicated IP](https://docs.mailtrap.io/email-api-smtp/deliverability/ip-warmup.md): Learn about Mailtrap IP warmup: shared vs dedicated IPs, automated IP warmup schedule, and gradual daily sending limits over 3 weeks.
+- [Bounce Categorization](https://docs.mailtrap.io/email-api-smtp/deliverability/bounce-categorization.md): Understand how Mailtrap categorizes email bounces based on MX server responses, including bounce types, descriptions, and automatic suppression rules.
+- [Feedback Loops](https://docs.mailtrap.io/email-api-smtp/deliverability/feedback-loops.md): Learn how Mailtrap integrates with popular Feedback Loops (FBLs) to track spam complaints from major mailbox providers including Outlook, Yahoo, and more.
+- [Automated Domain Reputation Monitoring](https://docs.mailtrap.io/email-api-smtp/deliverability/automated-domain-reputation-monitoring.md)
+- [Reputation Alerts](https://docs.mailtrap.io/email-api-smtp/deliverability/deliverability-alerts.md): Get weekly health status reports and critical alerts for your email deliverability metrics including opens, clicks, bounces, unsubscribes, and spam complaints.
+- [Protecting Your Domain](https://docs.mailtrap.io/email-api-smtp/deliverability/protecting-domain-security.md): Best practices to protect your sending domain from abuse, including securing web forms, implementing CAPTCHA, and hiding sensitive configuration files.
+- [Advanced Features](https://docs.mailtrap.io/email-api-smtp/advanced.md): Learn what features for advanced email sending scenarios Mailtrap Email API/SMTP provides.
+- [Custom Variables](https://docs.mailtrap.io/email-api-smtp/advanced/custom-variables.md): Add unique data to your emails with custom variables. Track user IDs, inbox IDs, and other metadata via Email Logs using X-MT-Custom-Variables header.
+- [Excluding Links from Tracking](https://docs.mailtrap.io/email-api-smtp/advanced/excluding-specific-links-from-tracking.md): Learn how to exclude specific links from tracking using the data-mt-no-track attribute to preserve app deeplinks and sensitive URLs.
+- [Auto BCC](https://docs.mailtrap.io/email-api-smtp/advanced/auto-bcc.md): Automatically add BCC recipients to all emails sent from your domain with custom headers support.
+- [Webhooks](https://docs.mailtrap.io/email-api-smtp/advanced/webhooks.md): Set up webhooks to receive real-time notifications about email deliverability events and account activities within your Mailtrap account.
+- [Static IPs for sending & webhooks](https://docs.mailtrap.io/email-api-smtp/advanced/static-ips-for-sending-and-webhooks.md)
+- [Recipient Tracking Opt-Outs](https://docs.mailtrap.io/email-api-smtp/advanced/recipient-tracking-opt-outs.md)
+- [Help & Support](https://docs.mailtrap.io/email-api-smtp/help.md): Get help with Email API/SMTP issues and find answers to common questions.
+- [Sending Glossary](https://docs.mailtrap.io/email-api-smtp/help/glossary.md): Definitions of key terms and phrases used in Mailtrap Email API/SMTP, including DNS records, email events, SMTP settings, and deliverability concepts.
+- [FAQs](https://docs.mailtrap.io/email-api-smtp/help/faqs.md): Frequently asked questions about Mailtrap Email API/SMTP.
+- [Troubleshooting](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting.md): Common issues and solutions for Mailtrap Email API/SMTP.
+- [401 Unauthorized Error](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting/unauthorized-401-error.md): How to fix "Unauthorised" (401) authentication errors in Mailtrap Email API/SMTP.
+- [Domain Not Allowed](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting/sending-from-domain-not-allowed.md): How to fix "Sending from domain is not allowed" (550 5.7.1) error in Mailtrap Email API/SMTP.
+- [From Header Mismatch](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting/from-header-domain-mismatch.md): How to fix "From: Header does not match the sender's domain" error in Mailtrap Email API/SMTP.
+- [Click Tracking Blocked – SSL Cipher Error](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting/ssl-cipher-overlap-error.md): Received a 'Click tracking disabled - custom hostname blocked' alert? Read this article and learn how to fix SSL errors when using custom domains for click tracking in Mailtrap Email API/SMTP.
+- [Office 365 Quarantine](https://docs.mailtrap.io/email-api-smtp/help/troubleshooting/ms-office-365-quarantine.md): How to resolve your emails sent from Mailtrap Email API/SMTP being sent to Office 365 quarantine.
+- [Overview](https://docs.mailtrap.io/inbound-email/overview.md): Overview of Mailtrap Inbound Email: receive incoming emails, access messages via API, and get webhook notifications for new messages.
+- [Receiving Emails](https://docs.mailtrap.io/inbound-email/receiving-emails.md)
+- [Webhooks](https://docs.mailtrap.io/inbound-email/webhooks.md): Step-by-step guide to setting up Mailtrap Inbound Email webhooks for real-time new-message notifications, signature verification, and delivery retries.
+- [Overview](https://docs.mailtrap.io/email-sandbox/overview.md): Test and preview emails safely in a sandbox environment before sending to production
+- [Setup & Configuration](https://docs.mailtrap.io/email-sandbox/setup.md): Get Email Sandbox configured and integrated with your application
+- [Sandbox SMTP Integration](https://docs.mailtrap.io/email-sandbox/setup/sandbox-smtp-integration.md): Learn how to integrate sandbox with your application using SMTP credentials or code samples
+- [Sandbox API Integration](https://docs.mailtrap.io/email-sandbox/setup/sandbox-api-integration.md): Learn how to use the Sandbox API to automate testing and manage email sandboxes programmatically.
+- [API Tokens](https://docs.mailtrap.io/email-sandbox/setup/api-tokens.md): Learn how to create, manage, and use API tokens for Email Sandbox.
+- [Email Address per Sandbox](https://docs.mailtrap.io/email-sandbox/setup/email-address-per-sandbox.md): Use a dedicated customizable email address for each sandbox to send test messages without SMTP integration.
+- [Testing Features](https://docs.mailtrap.io/email-sandbox/testing.md): Comprehensive email testing tools for quality assurance
+- [Email Template Inspector](https://docs.mailtrap.io/email-sandbox/testing/email-template.md): Check email content, validate HTML code, and verify text versions of your message.
+- [HTML Check](https://docs.mailtrap.io/email-sandbox/testing/email-html.md): Learn how HTML Check scans your email for problematic elements and provides market support scores.
+- [Email Headers and Bcc](https://docs.mailtrap.io/email-sandbox/testing/email-headers-and-bcc.md): Learn how to verify email headers including Subject, From, To, and Bcc fields.
+- [Spam & Blacklist reports](https://docs.mailtrap.io/email-sandbox/testing/spam-blacklist-reports.md): Learn how to check spam score and blacklisting to ensure email deliverability
+- [Bounce Emulator](https://docs.mailtrap.io/email-sandbox/testing/bounce-rate.md): Learn how to test your SMTP client's behavior when the server responds with an error
+- [Load Testing](https://docs.mailtrap.io/email-sandbox/testing/load-testing.md): Test your email application at scale using the Sandbox Enterprise plan with up to 150 emails per 10 seconds across 300 sandboxes
+- [Device Previews](https://docs.mailtrap.io/email-sandbox/testing/device-previews.md): Preview on Devices renders any captured email across a catalog of real email clients and devices - Gmail, Outlook, Apple Mail, mobile clients, and more.
+- [Sandbox Management](https://docs.mailtrap.io/email-sandbox/management.md): Manage and organize emails in your sandbox effectively
+- [Searching Messages](https://docs.mailtrap.io/email-sandbox/management/searching-messages.md): Search for emails in your sandbox by subject, recipient address, or recipient name
+- [Automatic Forwarding](https://docs.mailtrap.io/email-sandbox/management/automatic-email-forwarding.md): Forward emails from the sandbox to any inbox automatically for testing in different clients and notifying colleagues.
+- [Manual Forwarding](https://docs.mailtrap.io/email-sandbox/management/manual-email-forwarding.md): Forward individual emails from sandbox to any inbox for testing in different clients or notifying colleagues.
+- [Collaboration](https://docs.mailtrap.io/email-sandbox/collaboration.md): Team features for collaborative email testing
+- [Sharing Sandboxes](https://docs.mailtrap.io/email-sandbox/collaboration/sharing-sandboxes.md): Share individual sandboxes with team members for collaborative email testing.
+- [Sharing Projects](https://docs.mailtrap.io/email-sandbox/collaboration/sharing-projects.md): Organize and share projects to collaborate with team members on email testing.
+- [Mailtrap Local](https://docs.mailtrap.io/email-sandbox/local.md): Mailtrap Local is a free, open-source email sandbox for local email testing. Capture, inspect, and debug emails offline with SMTP, web UI, and REST API.
+- [Help & Support](https://docs.mailtrap.io/email-sandbox/help.md): Get help with Email Sandbox issues and find answers to common questions
+- [FAQs](https://docs.mailtrap.io/email-sandbox/help/faqs.md): Frequently asked questions about Email Sandbox
+- [Troubleshooting](https://docs.mailtrap.io/email-sandbox/help/troubleshooting.md): Common issues and solutions for Email Sandbox
+- [Features and Limits](https://docs.mailtrap.io/email-sandbox/help/features-and-limits.md): All Mailtrap features and possible limits explained
+- [Sandbox Glossary](https://docs.mailtrap.io/email-sandbox/help/glossary.md): Common terms and definitions for Email Sandbox features and protocols
+- [Overview](https://docs.mailtrap.io/email-marketing/overview.md): Create, send, and analyze email marketing campaigns with Mailtrap's comprehensive marketing platform
+- [Campaign Management](https://docs.mailtrap.io/email-marketing/campaigns.md): Create, schedule, and manage email marketing campaigns
+- [Email throttling](https://docs.mailtrap.io/email-marketing/campaigns/email-throttling.md)
+- [Campaign Scheduling](https://docs.mailtrap.io/email-marketing/campaigns/scheduling.md): Schedule your email campaigns up to two weeks in advance
+- [Email Templates](https://docs.mailtrap.io/email-marketing/campaigns/email-templates.md): Design, edit, and host HTML email templates and reference them via API.
+- [Stats](https://docs.mailtrap.io/email-marketing/campaigns/statistics.md): View and analyze email campaign performance metrics and analytics
+- [Automations](https://docs.mailtrap.io/email-marketing/automations.md): Create automated email sequences to engage your contacts with triggers, actions, and rules.
+- [Contacts Management](https://docs.mailtrap.io/email-marketing/contacts.md): Upload, store, and organize your contacts in email lists to send targeted campaigns.
+- [Overview](https://docs.mailtrap.io/email-marketing/contacts/overview.md): Search, filter, edit, and perform bulk operations on your contact database
+- [Custom Fields](https://docs.mailtrap.io/email-marketing/contacts/custom-fields.md): Create and manage custom fields to store additional contact information for personalization
+- [Import Contacts](https://docs.mailtrap.io/email-marketing/contacts/import-contacts.md): Import contacts via CSV, API, or third-party integrations
+- [Lists](https://docs.mailtrap.io/email-marketing/contacts/lists.md): Organize contacts into targeted groups for effective email campaigns
+- [Segments](https://docs.mailtrap.io/email-marketing/contacts/segments.md): Create dynamic contact groups that automatically update based on criteria
+- [Help & Support](https://docs.mailtrap.io/email-marketing/help.md): Get help with Email Marketing issues and find answers to common questions
+- [FAQs](https://docs.mailtrap.io/email-marketing/help/faqs.md): Frequently asked questions about Mailtrap Email Marketing
+- [User Management & Organizations](https://docs.mailtrap.io/account-and-organization/management.md): Manage users, teams, and organizational structure in Mailtrap. Control permissions, access, and collaboration.
+- [Organization & Sub-Accounts](https://docs.mailtrap.io/account-and-organization/management/organization-and-sub-accounts.md): Manage complex setups with Mailtrap Organization & Sub‑Accounts. Learn about centralized billing, isolated workspaces, permissions, and how to create and migrate sub-accounts.
+- [User Roles & User Management](https://docs.mailtrap.io/account-and-organization/management/users.md): Manage user roles and permissions in your Mailtrap account. Learn about account owners, admins, viewers, domain permissions, template access, and billing roles.
+- [User Profile](https://docs.mailtrap.io/account-and-organization/management/user-profile.md): Manage your Mailtrap user profile and account settings. Learn how to update your profile, delete your user account, create new accounts, and leave existing accounts.
+- [My Profile](https://docs.mailtrap.io/account-and-organization/management/my-profile.md): Manage your Mailtrap user profile settings, including email address, password, OAuth providers, and account access. Learn how to delete your profile or switch between accounts.
+- [SSO Guide](https://docs.mailtrap.io/account-and-organization/management/sso.md): Learn how to configure SAML 2.0 single sign-on (SSO) with Mailtrap using any Identity Provider that supports the SAML 2.0 protocol.
+- [Azure (Microsoft Entra)](https://docs.mailtrap.io/account-and-organization/management/sso/azure-microsoft-entra.md): Step-by-step guide to configure SAML-based Single Sign-On between Azure Active Directory and Mailtrap with role mapping support.
+- [Okta](https://docs.mailtrap.io/account-and-organization/management/sso/okta.md): Learn how to configure Single Sign-On (SSO) integration between Okta and Mailtrap using SAML 2.0, including role mapping and debugging.
+- [Google Workspace](https://docs.mailtrap.io/account-and-organization/management/sso/google-workspace.md): Step-by-step guide to configure SAML-based Single Sign-On between Google Workspace and Mailtrap with role mapping support.
+- [OneLogin](https://docs.mailtrap.io/account-and-organization/management/sso/onelogin.md): Learn how to configure Single Sign-On (SSO) integration between Mailtrap and OneLogin using SAML.
+- [JumpCloud](https://docs.mailtrap.io/account-and-organization/management/sso/jumpcloud.md): Step-by-step guide to configure SAML-based Single Sign-On between JumpCloud and Mailtrap with role mapping support.
+- [Notification center](https://docs.mailtrap.io/account-and-organization/notification-center.md)
+- [Billing & Plans](https://docs.mailtrap.io/account-and-organization/billing.md): Manage your Mailtrap subscription, billing, and account settings
+- [Billing Setup](https://docs.mailtrap.io/account-and-organization/billing/setup.md): Manage your Mailtrap billing details, payment methods, and invoices. Learn how to add or change your credit card, view payment history, and set up billing information.
+- [Pricing Plans](https://docs.mailtrap.io/account-and-organization/billing/plans.md): Learn about and compare Mailtrap's pricing for Email API/SMTP, Email Sandbox, and Email Marketing: free tiers, paid plan rates, overage costs, and bundle discounts explained.
+- [Payment Issues](https://docs.mailtrap.io/account-and-organization/billing/payment-issues.md): Troubleshoot common payment issues with Mailtrap billing. Learn how to fix zip/postal code errors and CAPTCHA token problems when adding payment methods.
+- [Payment and Billing FAQs](https://docs.mailtrap.io/account-and-organization/billing/faqs.md): Common questions about Mailtrap pricing, payments, invoices, subscriptions, and billing. Find answers to questions about plans, upgrades, refunds, and payment methods.
+- [Non-Profit and Open-Source](https://docs.mailtrap.io/account-and-organization/billing/non-profit-and-open-source.md): Mailtrap offers free plans and discounts for non-profit organizations and open-source initiatives. Learn how to activate non-profit benefits for your account.
+- [Educational institutions](https://docs.mailtrap.io/account-and-organization/billing/edu.md): Explore Mailtrap benefits for educational and non-profit institutions, including free plans, 50% discounts, and eligibility requirements.
+- [Suspensions and Bans](https://docs.mailtrap.io/account-and-organization/suspensions-and-bans.md): Understand Mailtrap account suspensions and bans. Learn the differences, reasons for enforcement, and how to clear suspensions or appeal bans.
+- [Security & Privacy](https://docs.mailtrap.io/account-and-organization/privacy-and-security.md): Learn about Mailtrap's security measures, compliance standards, and data protection policies.
+- [Two-Factor Authentication](https://docs.mailtrap.io/account-and-organization/privacy-and-security/2fa.md): Set up two-factor authentication (2FA) for your Mailtrap account to enhance security. Learn how to enable, disable, and recover your account with 2FA.
+- [User audit Logs](https://docs.mailtrap.io/account-and-organization/privacy-and-security/activity-log.md): Track user activities and actions in your Mailtrap account for security, transparency, and user management purposes.
+- [GDPR Compliance](https://docs.mailtrap.io/account-and-organization/privacy-and-security/gdpr-compliance.md): Learn about Mailtrap's GDPR compliance measures and data storage locations
+- [ISO Certification](https://docs.mailtrap.io/account-and-organization/privacy-and-security/iso-certification.md): Learn about Mailtrap's ISO/IEC 27001:2022 certification and information security standards
+- [Legal Policies](https://docs.mailtrap.io/account-and-organization/privacy-and-security/legal-policies.md): Access Mailtrap's privacy policy, data processing addendum, and other legal documents.
+
+## API Docs
+
+- [Overview](https://docs.mailtrap.io/developers/readme.md): Complete API documentation for the Mailtrap email platform
+- [Authentication](https://docs.mailtrap.io/developers/authentication.md): How to authenticate HTTP requests to Mailtrap APIs
+- [Rate Limits](https://docs.mailtrap.io/developers/rate-limits.md): API rate limits for Mailtrap endpoints to ensure fair usage and service stability
+- [OpenAPI Specs](https://docs.mailtrap.io/developers/openapi-specs.md): Access Mailtrap OpenAPI specifications for API integration and client generation.
+- [Transactional](https://docs.mailtrap.io/developers/email-sending/transactional.md): Send individual transactional emails
+- [Bulk](https://docs.mailtrap.io/developers/email-sending/bulk.md): Send marketing and bulk emails
+- [Domains](https://docs.mailtrap.io/developers/email-sending/domains.md): Manage verified domains
+- [Suppressions](https://docs.mailtrap.io/developers/email-sending/suppressions.md): Manage suppressed email addresses
+- [Tracking Opt-Outs](https://docs.mailtrap.io/developers/email-sending/tracking-opt-outs.md): Manage tracking opt-outs
+- [Stats](https://docs.mailtrap.io/developers/email-sending/stats.md): Email sending stats
+- [Email Logs](https://docs.mailtrap.io/developers/email-sending/email-logs.md): Email logs
+- [Webhooks](https://docs.mailtrap.io/developers/email-sending/webhooks.md): Manage webhook endpoints
+- [Contacts](https://docs.mailtrap.io/developers/email-marketing/contacts.md): Manage email contacts and lists
+- [Contacts](https://docs.mailtrap.io/developers/email-marketing/contacts/contacts.md): Manage individual contacts
+- [Contact Lists](https://docs.mailtrap.io/developers/email-marketing/contacts/contact-lists.md): Organize contacts into lists
+- [Contact Fields](https://docs.mailtrap.io/developers/email-marketing/contacts/contact-fields.md): Define custom contact fields
+- [Bulk Import](https://docs.mailtrap.io/developers/email-marketing/contacts/bulk-import.md): Import contacts from CSV
+- [Export Contacts](https://docs.mailtrap.io/developers/email-marketing/contacts/export-contacts.md): Export contact data
+- [Contact Events](https://docs.mailtrap.io/developers/email-marketing/contacts/contact-events.md): Track contact interactions
+- [Email Campaigns](https://docs.mailtrap.io/developers/email-marketing/email-campaigns.md): List, create, retrieve, and delete email campaigns
+- [Campaign Stats](https://docs.mailtrap.io/developers/email-marketing/campaign-stats.md): Retrieve aggregated performance metrics for a campaign
+- [Folders](https://docs.mailtrap.io/developers/inbound/folders.md): Organize inbound inboxes
+- [Inboxes](https://docs.mailtrap.io/developers/inbound/inboxes.md): Receive inbound email
+- [Messages](https://docs.mailtrap.io/developers/inbound/messages.md): List, inspect, and respond to received messages
+- [Threads](https://docs.mailtrap.io/developers/inbound/threads.md): Group related messages into conversations
+- [Templates](https://docs.mailtrap.io/developers/templates/templates.md): Manage email templates
+- [Send Test Emails](https://docs.mailtrap.io/developers/email-sandbox/send-test-emails.md): Send emails to sandbox
+- [Projects](https://docs.mailtrap.io/developers/email-sandbox/projects.md): Organize test environments
+- [Sandboxes](https://docs.mailtrap.io/developers/email-sandbox/sandboxes.md): Manage test sandboxes
+- [Messages](https://docs.mailtrap.io/developers/email-sandbox/messages.md): Inspect captured emails
+- [Attachments](https://docs.mailtrap.io/developers/email-sandbox/attachments.md): Handle email attachments
+- [Accounts](https://docs.mailtrap.io/developers/account-management/accounts.md)
+- [Access Control](https://docs.mailtrap.io/developers/account-management/access-control.md)
+- [API Tokens](https://docs.mailtrap.io/developers/account-management/api-tokens.md)
+- [Permissions](https://docs.mailtrap.io/developers/account-management/permissions.md)
+- [Billing](https://docs.mailtrap.io/developers/account-management/billing.md)
+- [Organizations](https://docs.mailtrap.io/developers/account-management/organizations.md)
+
+## Guides
+
+- [Overview](https://docs.mailtrap.io/guides/readme.md): Step-by-step guides for SDK integrations, DNS setup, third-party platform integrations, AI-powered tools, and SSO configuration
+- [.NET](https://docs.mailtrap.io/guides/sdk/dotnet-integration.md): Learn how to integrate Mailtrap with .NET apps and projects for email sending using SDK, SMTP, or RESTful API.
+- [Elixir](https://docs.mailtrap.io/guides/sdk/elixir-integration.md): Learn how to integrate Mailtrap with your Elixir applications using SDK, SMTP, or RESTful API for email sending
+- [Go](https://docs.mailtrap.io/guides/sdk/go-integration.md): Integrate Mailtrap with Go apps and projects for email sending using SDK, SMTP, or RESTful API
+- [Java](https://docs.mailtrap.io/guides/sdk/java-integration.md): Learn how to integrate Mailtrap with Java applications using SDK, SMTP, or RESTful API for email sending.
+- [Node.js](https://docs.mailtrap.io/guides/sdk/nodejs-integration.md): Learn how to integrate Mailtrap with Node.js applications using SDK, SMTP, or RESTful API for email sending.
+- [Perl](https://docs.mailtrap.io/guides/sdk/perl-integration.md): Learn how to integrate Mailtrap with Perl apps and projects for email sending using SMTP and RESTful API.
+- [PHP](https://docs.mailtrap.io/guides/sdk/php-integration.md): Integrate Mailtrap with PHP applications using SDK, SMTP, or RESTful API for reliable email sending
+- [Python](https://docs.mailtrap.io/guides/sdk/python-integration.md): Learn how to integrate Mailtrap with Python apps and projects for email sending using SDK, SMTP, and RESTful API.
+- [Ruby](https://docs.mailtrap.io/guides/sdk/ruby-integration.md): Integrate Mailtrap with Ruby apps and projects for email sending using SDK, SMTP, or RESTful API
+- [Scala](https://docs.mailtrap.io/guides/sdk/scala-integration.md): Learn how to integrate Mailtrap with Scala apps and projects for email sending using SMTP and RESTful API methods.
+- [Apache Airflow](https://docs.mailtrap.io/guides/integrations/apache-airflow.md)
+- [Astro](https://docs.mailtrap.io/guides/integrations/astro.md): Learn how to send emails in Astro using Mailtrap's Email API.
+- [AWS Lambda](https://docs.mailtrap.io/guides/integrations/aws-lambda.md): Learn how to integrate Mailtrap with AWS Lambda functions to send emails using the Mailtrap Email API.
+- [Better Auth](https://docs.mailtrap.io/guides/integrations/better-auth.md): Learn how to send Better Auth verification and password reset emails using Mailtrap's Email API.
+- [Cloudflare Workers](https://docs.mailtrap.io/guides/integrations/cloudflare-workers.md): Learn how to integrate Mailtrap with Cloudflare Workers to send emails using the Mailtrap Email API.
+- [cPanel SMTP Relay](https://docs.mailtrap.io/guides/integrations/cpanel.md): Configure Mailtrap Email Sending as an SMTP relay (Smarthost) in cPanel using Exim mail server configuration.
+- [Composio](https://docs.mailtrap.io/guides/integrations/composio.md): Learn how to integrate Mailtrap with Composio.
+- [cURL](https://docs.mailtrap.io/guides/integrations/curl.md): Send emails using cURL with Mailtrap through SMTP integration or API endpoints with code samples and configuration options.
+- [Deno](https://docs.mailtrap.io/guides/integrations/deno.md): Learn how to integrate Mailtrap with Deno to send emails using the Email API.
+- [FastAPI](https://docs.mailtrap.io/guides/integrations/fastapi.md): Learn how to integrate Mailtrap with FastAPI to send emails via Email API.
+- [Firebase](https://docs.mailtrap.io/guides/integrations/firebase.md)
+- [Hono](https://docs.mailtrap.io/guides/integrations/hono.md): Learn how to integrate Mailtrap with Hono to send emails using the Email API.
+- [Make.com](https://docs.mailtrap.io/guides/integrations/make.md): Automate email workflows by connecting Mailtrap to thousands of applications using Make.com (formerly Integromat) without writing any code.
+- [N8N](https://docs.mailtrap.io/guides/integrations/n8n.md): Seamlessly integrate Mailtrap into your N8N workflows to automate email sending and contact management tasks without coding.
+- [Nuxt](https://docs.mailtrap.io/guides/integrations/nuxt.md): Learn how to send emails in Nuxt applications using Mailtrap's Email API.
+- [Phoenix](https://docs.mailtrap.io/guides/integrations/phoenix.md): Learn how to integrate Mailtrap with Phoenix applications to send emails.
+- [Redwood](https://docs.mailtrap.io/guides/integrations/redwood.md): Learn how to send emails in Redwood applications using Mailtrap's Email API.
+- [Remix](https://docs.mailtrap.io/guides/integrations/remix.md): Learn how to integrate Mailtrap with Remix to send emails from your application using the Email API.
+- [Retool](https://docs.mailtrap.io/guides/integrations/retool.md)
+- [Retool REST API](https://docs.mailtrap.io/guides/integrations/retool/rest-api.md): Step-by-step guide on how to integrate Mailtrap with your Retool application to send emails via REST API.
+- [Retool OpenAPI](https://docs.mailtrap.io/guides/integrations/retool/openapi.md)
+- [Salesforce](https://docs.mailtrap.io/guides/integrations/salesforce.md)
+- [Sinatra](https://docs.mailtrap.io/guides/integrations/sinatra.md): Learn how to integrate Mailtrap with Sinatra applications to send emails using the Email API.
+- [Supabase](https://docs.mailtrap.io/guides/integrations/supabase.md): Comprehensive guide to integrate Mailtrap with Supabase for email sending and contact management with flexible email options.
+- [Supabase Transactional Emails Integration](https://docs.mailtrap.io/guides/integrations/supabase/transactional-emails.md): Learn how to integrate Mailtrap SMTP with Supabase to bypass email rate limits and send production-ready emails with comprehensive analytics.
+- [Sync Contacts with Supabase](https://docs.mailtrap.io/guides/integrations/supabase/contacts-management.md): Seamlessly sync your Supabase user base with Mailtrap to update email lists, create segments, launch personalized campaigns, and measure effectiveness.
+- [Wget](https://docs.mailtrap.io/guides/integrations/wget.md): Learn how to integrate Mailtrap with Wget to send emails via the command line using the Email API.
+- [Vercel](https://docs.mailtrap.io/guides/integrations/vercel.md): Step-by-step guide on how to integrate Mailtrap with your application hosted on Vercel to enable email sending capabilities.
+- [Zapier](https://docs.mailtrap.io/guides/integrations/zapier.md): Automate email sending by connecting Mailtrap to over 7,000 applications using Zapier without writing any code.
+- [Antigravity](https://docs.mailtrap.io/guides/ai-powered-integrations/antigravity.md)
+- [Anything](https://docs.mailtrap.io/guides/ai-powered-integrations/anything.md): Step-by-step guide on how to integrate Mailtrap with your Anything application to send emails.
+- [Augment Code](https://docs.mailtrap.io/guides/ai-powered-integrations/augment-code.md)
+- [Base44](https://docs.mailtrap.io/guides/ai-powered-integrations/base44.md)
+- [BuildAI](https://docs.mailtrap.io/guides/ai-powered-integrations/buildai.md)
+- [Bolt.new](https://docs.mailtrap.io/guides/ai-powered-integrations/bolt-new.md): Step-by-step guide to integrate Mailtrap with Bolt.new to send transactional emails and manage contacts using AI-powered development.
+- [Claude](https://docs.mailtrap.io/guides/ai-powered-integrations/claude.md): Integrate Mailtrap with Claude Desktop to send transactional and promotional emails directly from Claude using Model Context Protocol.
+- [Codex](https://docs.mailtrap.io/guides/ai-powered-integrations/codex.md)
+- [Cursor](https://docs.mailtrap.io/guides/ai-powered-integrations/cursor.md): Integrate Mailtrap with the Cursor code editor to send transactional and promotional emails directly from your AI-powered development environment.
+- [GitHub Copilot](https://docs.mailtrap.io/guides/ai-powered-integrations/github-copilot.md)
+- [Leap.new](https://docs.mailtrap.io/guides/ai-powered-integrations/leap-new.md): Step-by-step guide on how to integrate Mailtrap with your Leap.new application to send emails.
+- [Lovable](https://docs.mailtrap.io/guides/ai-powered-integrations/lovable.md): Step-by-step guide on how to integrate Mailtrap with your Lovable application to send transactional emails and manage contacts.
+- [OpenClaw](https://docs.mailtrap.io/guides/ai-powered-integrations/openclaw.md): Email Sandbox Automation for OpenClaw
+- [Qodo](https://docs.mailtrap.io/guides/ai-powered-integrations/qodo.md)
+- [OpenCode](https://docs.mailtrap.io/guides/ai-powered-integrations/opencode.md)
+- [Replit](https://docs.mailtrap.io/guides/ai-powered-integrations/replit.md): Set up production email sending in a Replit project using the Mailtrap Email API with official SDKs (Node.js or Python).
+- [Reflex Build](https://docs.mailtrap.io/guides/ai-powered-integrations/reflex-build.md): Step-by-step guide on how to integrate Mailtrap with your Reflex Build application to send emails.
+- [V0](https://docs.mailtrap.io/guides/ai-powered-integrations/v0.md): Learn how to integrate Mailtrap with V0 to send emails through a contact form using AI-generated components and the Mailtrap API.
+- [Visual Studio Code (VS Code)](https://docs.mailtrap.io/guides/ai-powered-integrations/vs-code.md): Learn how to integrate Mailtrap with VS Code using the Mailtrap MCP server to send emails directly from the editor with simple AI prompts.
+- [Devin AI (ex Windsurf)](https://docs.mailtrap.io/guides/ai-powered-integrations/windsurf.md): Learn how to integrate Mailtrap with Devin to send emails directly from the editor using Cascade and the Mailtrap MCP server.
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.mailtrap.io/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

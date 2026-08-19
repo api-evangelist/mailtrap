@@ -1,0 +1,651 @@
+{
+  "item": [
+    {
+      "id": "7d1a3dcc-21fb-45b1-bfe5-67fdc7c04e48",
+      "name": "Send",
+      "description": {
+        "content": "Send transactional and bulk emails",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b1229fd-add7-453f-9fe2-64752abac52a",
+          "name": "Send a transactional email",
+          "request": {
+            "name": "Send a transactional email",
+            "description": {
+              "content": "Send a single transactional email in real time. Supports HTML and text bodies, attachments, headers, custom variables, and category tagging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"from\": {\n    \"email\": \"<email>\",\n    \"name\": \"<string>\"\n  },\n  \"to\": [\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"cc\": [\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"bcc\": [\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"reply_to\": {\n    \"email\": \"<email>\",\n    \"name\": \"<string>\"\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"category\": \"<string>\",\n  \"custom_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"type\": \"<string>\",\n      \"disposition\": \"<string>\",\n      \"content_id\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"type\": \"<string>\",\n      \"disposition\": \"<string>\",\n      \"content_id\": \"<string>\"\n    }\n  ],\n  \"template_uuid\": \"<string>\",\n  \"template_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": 8240.041240217104,\n    \"key_2\": 4133\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e2601992-d30c-4562-b0ad-3b8d41c1d3f9",
+              "name": "Email accepted for delivery",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"s3iip3efF46BI4O@JVWzanTPFD.fs\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"C-XqcVLMc32Q@EkOcBiQaiXRhMSpqGVrXjPmtnpQB.zo\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"iNd@MEbGRHSqf.guoi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"cc\": [\n    {\n      \"email\": \"NyRGawd@docOfmFy.hw\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"p1C6TPLYtqE@F.gbi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"bcc\": [\n    {\n      \"email\": \"iDWD5Exu@yEGZzmbqQgWREwlBFTXADKrKZCUXyYn.ader\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"DSWMvGj@wixpbqCznr.ytd\",\n      \"name\": \"string\"\n    }\n  ],\n  \"reply_to\": {\n    \"email\": \"ecIs@KeYQPuSogAGNelFhIXWLolyhWdeHQrsli.py\",\n    \"name\": \"string\"\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"category\": \"<string>\",\n  \"custom_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"headers\": {\n    \"key_0\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"inline\",\n      \"content_id\": \"string\"\n    },\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"attachment\",\n      \"content_id\": \"string\"\n    }\n  ],\n  \"template_uuid\": \"<string>\",\n  \"template_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"message_ids\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4dea51d0-58c8-4a0e-84a4-8d1127740fdc",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"s3iip3efF46BI4O@JVWzanTPFD.fs\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"C-XqcVLMc32Q@EkOcBiQaiXRhMSpqGVrXjPmtnpQB.zo\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"iNd@MEbGRHSqf.guoi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"cc\": [\n    {\n      \"email\": \"NyRGawd@docOfmFy.hw\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"p1C6TPLYtqE@F.gbi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"bcc\": [\n    {\n      \"email\": \"iDWD5Exu@yEGZzmbqQgWREwlBFTXADKrKZCUXyYn.ader\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"DSWMvGj@wixpbqCznr.ytd\",\n      \"name\": \"string\"\n    }\n  ],\n  \"reply_to\": {\n    \"email\": \"ecIs@KeYQPuSogAGNelFhIXWLolyhWdeHQrsli.py\",\n    \"name\": \"string\"\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"category\": \"<string>\",\n  \"custom_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"headers\": {\n    \"key_0\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"inline\",\n      \"content_id\": \"string\"\n    },\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"attachment\",\n      \"content_id\": \"string\"\n    }\n  ],\n  \"template_uuid\": \"<string>\",\n  \"template_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "500fb741-a580-4b3b-a8b4-ec25200969dd",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"s3iip3efF46BI4O@JVWzanTPFD.fs\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"C-XqcVLMc32Q@EkOcBiQaiXRhMSpqGVrXjPmtnpQB.zo\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"iNd@MEbGRHSqf.guoi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"cc\": [\n    {\n      \"email\": \"NyRGawd@docOfmFy.hw\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"p1C6TPLYtqE@F.gbi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"bcc\": [\n    {\n      \"email\": \"iDWD5Exu@yEGZzmbqQgWREwlBFTXADKrKZCUXyYn.ader\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"DSWMvGj@wixpbqCznr.ytd\",\n      \"name\": \"string\"\n    }\n  ],\n  \"reply_to\": {\n    \"email\": \"ecIs@KeYQPuSogAGNelFhIXWLolyhWdeHQrsli.py\",\n    \"name\": \"string\"\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"category\": \"<string>\",\n  \"custom_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"headers\": {\n    \"key_0\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"inline\",\n      \"content_id\": \"string\"\n    },\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"attachment\",\n      \"content_id\": \"string\"\n    }\n  ],\n  \"template_uuid\": \"<string>\",\n  \"template_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "030b55db-a391-4c95-9e2e-ea513cf6dd7c",
+              "name": "Quota or permission error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"s3iip3efF46BI4O@JVWzanTPFD.fs\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"C-XqcVLMc32Q@EkOcBiQaiXRhMSpqGVrXjPmtnpQB.zo\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"iNd@MEbGRHSqf.guoi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"cc\": [\n    {\n      \"email\": \"NyRGawd@docOfmFy.hw\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"p1C6TPLYtqE@F.gbi\",\n      \"name\": \"string\"\n    }\n  ],\n  \"bcc\": [\n    {\n      \"email\": \"iDWD5Exu@yEGZzmbqQgWREwlBFTXADKrKZCUXyYn.ader\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"DSWMvGj@wixpbqCznr.ytd\",\n      \"name\": \"string\"\n    }\n  ],\n  \"reply_to\": {\n    \"email\": \"ecIs@KeYQPuSogAGNelFhIXWLolyhWdeHQrsli.py\",\n    \"name\": \"string\"\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"category\": \"<string>\",\n  \"custom_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"headers\": {\n    \"key_0\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"inline\",\n      \"content_id\": \"string\"\n    },\n    {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"type\": \"string\",\n      \"disposition\": \"attachment\",\n      \"content_id\": \"string\"\n    }\n  ],\n  \"template_uuid\": \"<string>\",\n  \"template_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca786b26-ee66-4d94-a7f9-0b6645e414e2",
+          "name": "Send batch emails",
+          "request": {
+            "name": "Send batch emails",
+            "description": {
+              "content": "Send up to 500 emails in a single request. A base message defines shared fields and per-recipient requests override or supplement them.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"base\": {\n    \"from\": {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    \"to\": [\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"subject\": \"<string>\",\n    \"cc\": [\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"bcc\": [\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"reply_to\": {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    \"text\": \"<string>\",\n    \"html\": \"<string>\",\n    \"category\": \"<string>\",\n    \"custom_variables\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"attachments\": [\n      {\n        \"content\": \"<string>\",\n        \"filename\": \"<string>\",\n        \"type\": \"<string>\",\n        \"disposition\": \"<string>\",\n        \"content_id\": \"<string>\"\n      },\n      {\n        \"content\": \"<string>\",\n        \"filename\": \"<string>\",\n        \"type\": \"<string>\",\n        \"disposition\": \"<string>\",\n        \"content_id\": \"<string>\"\n      }\n    ],\n    \"template_uuid\": \"<string>\",\n    \"template_variables\": {\n      \"key_0\": true\n    }\n  },\n  \"requests\": [\n    {\n      \"from\": {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      },\n      \"to\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"subject\": \"<string>\",\n      \"text\": \"<string>\",\n      \"html\": \"<string>\",\n      \"custom_variables\": \"<object>\",\n      \"template_variables\": \"<object>\"\n    },\n    {\n      \"from\": {\n        \"email\": \"<email>\",\n        \"name\": \"<string>\"\n      },\n      \"to\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"email\": \"<email>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"subject\": \"<string>\",\n      \"text\": \"<string>\",\n      \"html\": \"<string>\",\n      \"custom_variables\": \"<object>\",\n      \"template_variables\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e9d9eb1-f586-4e0b-8a7d-3e0c1a4736ef",
+              "name": "Batch accepted for delivery",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"base\": {\n    \"from\": {\n      \"email\": \"C0haS3CD@iU.sox\",\n      \"name\": \"string\"\n    },\n    \"to\": [\n      {\n        \"email\": \"8MonaYcQwvjDTQd@EyLOUKcU.bsqn\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"aAmlj@AeCbUt.vp\",\n        \"name\": \"string\"\n      }\n    ],\n    \"subject\": \"string\",\n    \"cc\": [\n      {\n        \"email\": \"0eRpxScGLST@pBqdLIQRawyR.fk\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"WJ9LX7zmBUwDD@OjnTBrkjcrv.mhmr\",\n        \"name\": \"string\"\n      }\n    ],\n    \"bcc\": [\n      {\n        \"email\": \"HQKSaJI3t-CbtQA@SZtwgDbftxVrpgrEHznPl.xax\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"maXXFHGJ4@PlIFEdpxIJGOMSkkMPqjIhKAonVd.lvf\",\n        \"name\": \"string\"\n      }\n    ],\n    \"reply_to\": {\n      \"email\": \"KyZolZShYnEEG@xJkPkETZdWxUFiCKHfyQaujy.hs\",\n      \"name\": \"string\"\n    },\n    \"text\": \"string\",\n    \"html\": \"string\",\n    \"category\": \"string\",\n    \"custom_variables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"attachments\": [\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      },\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      }\n    ],\n    \"template_uuid\": \"string\",\n    \"template_variables\": {\n      \"key_0\": 1717.283802905164\n    }\n  },\n  \"requests\": [\n    {\n      \"from\": {\n        \"email\": \"XIdLwB3bgHVK2@CrfvsnOnRMmzYfblvxJkbO.ry\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"SZRQCOJR@e.be\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"Bx9KTE@GHBcPdDoENlBIzTqKwDhZcJT.im\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"0tPvBMg@KENEnIJXJwAdsZBTcXjPYDIl.lva\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"D4i@PClmFtYDiTjKVZPS.zpi\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"ymED3lxfH3I53@Pgyytrw.hz\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kncUcR68kB4Hs8@UlKwdB.exzh\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    },\n    {\n      \"from\": {\n        \"email\": \"PdtLf4@E.sm\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"2k6pzkend050Pv@GRf.te\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kQBe7Gs0aZdgH@Emx.dj\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"tdp@jvpWJbhBLxfY.gis\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"PYFLEC@UOirtgPCwJPiMpTLMfPNAt.yfc\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"bz2CNnxsqu@ILllHnNIIIQDaZzJErjwoYiGvIY.sc\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"iwV@xkImXjDPcD.dga\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"responses\": [\n    {\n      \"success\": true,\n      \"message_ids\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"success\": false,\n      \"message_ids\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa73b29e-998e-473b-9981-b73021dfa826",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"base\": {\n    \"from\": {\n      \"email\": \"C0haS3CD@iU.sox\",\n      \"name\": \"string\"\n    },\n    \"to\": [\n      {\n        \"email\": \"8MonaYcQwvjDTQd@EyLOUKcU.bsqn\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"aAmlj@AeCbUt.vp\",\n        \"name\": \"string\"\n      }\n    ],\n    \"subject\": \"string\",\n    \"cc\": [\n      {\n        \"email\": \"0eRpxScGLST@pBqdLIQRawyR.fk\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"WJ9LX7zmBUwDD@OjnTBrkjcrv.mhmr\",\n        \"name\": \"string\"\n      }\n    ],\n    \"bcc\": [\n      {\n        \"email\": \"HQKSaJI3t-CbtQA@SZtwgDbftxVrpgrEHznPl.xax\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"maXXFHGJ4@PlIFEdpxIJGOMSkkMPqjIhKAonVd.lvf\",\n        \"name\": \"string\"\n      }\n    ],\n    \"reply_to\": {\n      \"email\": \"KyZolZShYnEEG@xJkPkETZdWxUFiCKHfyQaujy.hs\",\n      \"name\": \"string\"\n    },\n    \"text\": \"string\",\n    \"html\": \"string\",\n    \"category\": \"string\",\n    \"custom_variables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"attachments\": [\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      },\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      }\n    ],\n    \"template_uuid\": \"string\",\n    \"template_variables\": {\n      \"key_0\": 1717.283802905164\n    }\n  },\n  \"requests\": [\n    {\n      \"from\": {\n        \"email\": \"XIdLwB3bgHVK2@CrfvsnOnRMmzYfblvxJkbO.ry\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"SZRQCOJR@e.be\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"Bx9KTE@GHBcPdDoENlBIzTqKwDhZcJT.im\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"0tPvBMg@KENEnIJXJwAdsZBTcXjPYDIl.lva\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"D4i@PClmFtYDiTjKVZPS.zpi\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"ymED3lxfH3I53@Pgyytrw.hz\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kncUcR68kB4Hs8@UlKwdB.exzh\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    },\n    {\n      \"from\": {\n        \"email\": \"PdtLf4@E.sm\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"2k6pzkend050Pv@GRf.te\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kQBe7Gs0aZdgH@Emx.dj\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"tdp@jvpWJbhBLxfY.gis\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"PYFLEC@UOirtgPCwJPiMpTLMfPNAt.yfc\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"bz2CNnxsqu@ILllHnNIIIQDaZzJErjwoYiGvIY.sc\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"iwV@xkImXjDPcD.dga\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dc180b06-6074-4ee3-a06d-26c861c5fe07",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"base\": {\n    \"from\": {\n      \"email\": \"C0haS3CD@iU.sox\",\n      \"name\": \"string\"\n    },\n    \"to\": [\n      {\n        \"email\": \"8MonaYcQwvjDTQd@EyLOUKcU.bsqn\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"aAmlj@AeCbUt.vp\",\n        \"name\": \"string\"\n      }\n    ],\n    \"subject\": \"string\",\n    \"cc\": [\n      {\n        \"email\": \"0eRpxScGLST@pBqdLIQRawyR.fk\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"WJ9LX7zmBUwDD@OjnTBrkjcrv.mhmr\",\n        \"name\": \"string\"\n      }\n    ],\n    \"bcc\": [\n      {\n        \"email\": \"HQKSaJI3t-CbtQA@SZtwgDbftxVrpgrEHznPl.xax\",\n        \"name\": \"string\"\n      },\n      {\n        \"email\": \"maXXFHGJ4@PlIFEdpxIJGOMSkkMPqjIhKAonVd.lvf\",\n        \"name\": \"string\"\n      }\n    ],\n    \"reply_to\": {\n      \"email\": \"KyZolZShYnEEG@xJkPkETZdWxUFiCKHfyQaujy.hs\",\n      \"name\": \"string\"\n    },\n    \"text\": \"string\",\n    \"html\": \"string\",\n    \"category\": \"string\",\n    \"custom_variables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"headers\": {\n      \"key_0\": \"string\"\n    },\n    \"attachments\": [\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      },\n      {\n        \"content\": \"string\",\n        \"filename\": \"string\",\n        \"type\": \"string\",\n        \"disposition\": \"attachment\",\n        \"content_id\": \"string\"\n      }\n    ],\n    \"template_uuid\": \"string\",\n    \"template_variables\": {\n      \"key_0\": 1717.283802905164\n    }\n  },\n  \"requests\": [\n    {\n      \"from\": {\n        \"email\": \"XIdLwB3bgHVK2@CrfvsnOnRMmzYfblvxJkbO.ry\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"SZRQCOJR@e.be\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"Bx9KTE@GHBcPdDoENlBIzTqKwDhZcJT.im\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"0tPvBMg@KENEnIJXJwAdsZBTcXjPYDIl.lva\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"D4i@PClmFtYDiTjKVZPS.zpi\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"ymED3lxfH3I53@Pgyytrw.hz\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kncUcR68kB4Hs8@UlKwdB.exzh\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    },\n    {\n      \"from\": {\n        \"email\": \"PdtLf4@E.sm\",\n        \"name\": \"string\"\n      },\n      \"to\": [\n        {\n          \"email\": \"2k6pzkend050Pv@GRf.te\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"kQBe7Gs0aZdgH@Emx.dj\",\n          \"name\": \"string\"\n        }\n      ],\n      \"cc\": [\n        {\n          \"email\": \"tdp@jvpWJbhBLxfY.gis\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"PYFLEC@UOirtgPCwJPiMpTLMfPNAt.yfc\",\n          \"name\": \"string\"\n        }\n      ],\n      \"bcc\": [\n        {\n          \"email\": \"bz2CNnxsqu@ILllHnNIIIQDaZzJErjwoYiGvIY.sc\",\n          \"name\": \"string\"\n        },\n        {\n          \"email\": \"iwV@xkImXjDPcD.dga\",\n          \"name\": \"string\"\n        }\n      ],\n      \"subject\": \"string\",\n      \"text\": \"string\",\n      \"html\": \"string\",\n      \"custom_variables\": {},\n      \"template_variables\": {}\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acbba783-5ba3-424b-b979-a273cecb1b15",
+          "name": "Send a test email to a sandbox inbox",
+          "request": {
+            "name": "Send a test email to a sandbox inbox",
+            "description": {
+              "content": "Send an email into a specific sandbox inbox for inspection and debugging. Uses the same JSON body shape as the production send API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "send",
+                ":inbox_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "inbox_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"from\": {\n    \"email\": \"<email>\",\n    \"name\": \"<string>\"\n  },\n  \"to\": [\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"text\": \"<string>\",\n  \"html\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f44a7189-56fa-463b-87a2-d56360707b45",
+              "name": "Email captured by the sandbox inbox",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send",
+                    ":inbox_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"ajAAts-0qiJ5@xueCKdULs.peb\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"TLFs0HhfOhpDIX@jiNRbFJqhFpxeuxoYDGTrzzuLq.pl\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"wSo2QX@AndYhLKvBrZyWaqiUuYcODWHmLSRwji.co\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"text\": \"<string>\",\n  \"html\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57775cab-f70b-4969-aefb-5a3f886d4e7b",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "send",
+                    ":inbox_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "inbox_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": {\n    \"email\": \"ajAAts-0qiJ5@xueCKdULs.peb\",\n    \"name\": \"string\"\n  },\n  \"to\": [\n    {\n      \"email\": \"TLFs0HhfOhpDIX@jiNRbFJqhFpxeuxoYDGTrzzuLq.pl\",\n      \"name\": \"string\"\n    },\n    {\n      \"email\": \"wSo2QX@AndYhLKvBrZyWaqiUuYcODWHmLSRwji.co\",\n      \"name\": \"string\"\n    }\n  ],\n  \"subject\": \"<string>\",\n  \"text\": \"<string>\",\n  \"html\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://send.api.mailtrap.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f5ee530f-4fa9-4dfa-b256-7586cf957ac4",
+    "name": "Mailtrap Email Sending Inboxes Send API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.\n\nContact Support:\n Name: Mailtrap Support",
+      "type": "text/plain"
+    }
+  }
+}
