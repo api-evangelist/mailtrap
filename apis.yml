@@ -54,6 +54,8 @@ apis:
   humanURL: https://mailtrap.io/email-api/
   baseURL: https://send.api.mailtrap.io
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
