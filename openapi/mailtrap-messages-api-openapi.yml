@@ -1,19 +1,19 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Mailtrap Email Sending Inboxes Messages API
-  description: The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS. The API exposes a JSON-based send endpoint and a batch endpoint capable of delivering up to 500 emails in a single request.
+  title: Mailtrap Email Sandbox Messages API
+  description: The Mailtrap Email Sandbox API provides a safe email testing environment to inspect and debug emails before sending to real recipients. The API supports sending test emails into virtual inboxes, then retrieving, analyzing, and managing those captured messages. Sandbox endpoints cover messages, inboxes, projects, spam reports, HTML analysis, and raw or formatted message bodies.
   version: '1.0'
   contact:
     name: Mailtrap Support
     url: https://help.mailtrap.io/
   termsOfService: https://mailtrap.io/terms-of-use/
 servers:
-- url: https://send.api.mailtrap.io
-  description: Transactional email production
-- url: https://bulk.api.mailtrap.io
-  description: Bulk stream production
+- url: https://sandbox.api.mailtrap.io
+  description: Sandbox API
+- url: https://mailtrap.io
+  description: Mailtrap management API
 security:
-- BearerAuth: []
+- ApiTokenAuth: []
 tags:
 - name: Messages
   description: Inspect captured messages
@@ -211,14 +211,14 @@ paths:
           description: Header collection
 components:
   parameters:
-    MessageId:
-      name: message_id
+    AccountId:
+      name: account_id
       in: path
       required: true
       schema:
         type: integer
-    AccountId:
-      name: account_id
+    MessageId:
+      name: message_id
       in: path
       required: true
       schema:
@@ -257,9 +257,10 @@ components:
         text_body_size:
           type: integer
   securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
+    ApiTokenAuth:
+      type: apiKey
+      in: header
+      name: Api-Token
 externalDocs:
-  description: Mailtrap Email API Documentation
+  description: Mailtrap Email Sandbox Documentation
   url: https://docs.mailtrap.io/

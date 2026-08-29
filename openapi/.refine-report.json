@@ -1,18 +1,26 @@
 {
   "provider": "mailtrap",
   "sources": [
-    "mailtrap-inboxes-api-openapi.yml",
-    "mailtrap-messages-api-openapi.yml",
-    "mailtrap-send-api-openapi.yml"
+    "_original/mailtrap-email-api-openapi.yml",
+    "_original/mailtrap-email-sandbox-openapi.yml"
   ],
   "outputs": [
+    "mailtrap-send-api-openapi.yml",
     "mailtrap-inboxes-api-openapi.yml",
-    "mailtrap-messages-api-openapi.yml",
-    "mailtrap-send-api-openapi.yml"
+    "mailtrap-messages-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mailtrap-email-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "mailtrap-email-sandbox-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tag 'Send' spans 2 source specs (mailtrap-email-api-openapi.yml, mailtrap-email-sandbox-openapi.yml): per-path servers applied"
+  ],
+  "skipped": [
+    "mailtrap-inboxes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailtrap-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mailtrap-send-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
