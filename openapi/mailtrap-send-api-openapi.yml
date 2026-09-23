@@ -117,74 +117,6 @@ paths:
       description: Mailtrap management API
 components:
   schemas:
-    SendRequest:
-      type: object
-      required:
-      - from
-      - to
-      - subject
-      properties:
-        from:
-          $ref: '#/components/schemas/Address'
-        to:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        cc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        bcc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        reply_to:
-          $ref: '#/components/schemas/Address'
-        subject:
-          type: string
-        text:
-          type: string
-        html:
-          type: string
-        category:
-          type: string
-        custom_variables:
-          type: object
-          additionalProperties:
-            type: string
-        headers:
-          type: object
-          additionalProperties:
-            type: string
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
-        template_uuid:
-          type: string
-        template_variables:
-          type: object
-          additionalProperties: true
-    Attachment:
-      type: object
-      required:
-      - content
-      - filename
-      properties:
-        content:
-          type: string
-          description: Base64-encoded file content
-        filename:
-          type: string
-        type:
-          type: string
-        disposition:
-          type: string
-          enum:
-          - attachment
-          - inline
-        content_id:
-          type: string
     BatchResponse:
       type: object
       properties:
@@ -244,6 +176,74 @@ components:
           format: email
         name:
           type: string
+    Attachment:
+      type: object
+      required:
+      - content
+      - filename
+      properties:
+        content:
+          type: string
+          description: Base64-encoded file content
+        filename:
+          type: string
+        type:
+          type: string
+        disposition:
+          type: string
+          enum:
+          - attachment
+          - inline
+        content_id:
+          type: string
+    SendRequest:
+      type: object
+      required:
+      - from
+      - to
+      - subject
+      properties:
+        from:
+          $ref: '#/components/schemas/Address'
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        cc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        bcc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        reply_to:
+          $ref: '#/components/schemas/Address'
+        subject:
+          type: string
+        text:
+          type: string
+        html:
+          type: string
+        category:
+          type: string
+        custom_variables:
+          type: object
+          additionalProperties:
+            type: string
+        headers:
+          type: object
+          additionalProperties:
+            type: string
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+        template_uuid:
+          type: string
+        template_variables:
+          type: object
+          additionalProperties: true
     SendResponse:
       type: object
       properties:

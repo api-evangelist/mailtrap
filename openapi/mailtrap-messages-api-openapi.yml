@@ -211,14 +211,14 @@ paths:
           description: Header collection
 components:
   parameters:
-    AccountId:
-      name: account_id
+    MessageId:
+      name: message_id
       in: path
       required: true
       schema:
         type: integer
-    MessageId:
-      name: message_id
+    AccountId:
+      name: account_id
       in: path
       required: true
       schema:

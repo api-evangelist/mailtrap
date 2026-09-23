@@ -16,7 +16,8 @@
     "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "mailtrap-email-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "mailtrap-email-sandbox-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "tag 'Send' spans 2 source specs (mailtrap-email-api-openapi.yml, mailtrap-email-sandbox-openapi.yml): per-path servers applied"
+    "tag 'Send' spans 2 source specs (mailtrap-email-api-openapi.yml, mailtrap-email-sandbox-openapi.yml): per-path servers applied",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "mailtrap-inboxes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
