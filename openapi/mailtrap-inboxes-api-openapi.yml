@@ -157,14 +157,14 @@ paths:
           description: Credentials reset
 components:
   parameters:
-    AccountId:
-      name: account_id
+    InboxId:
+      name: inbox_id
       in: path
       required: true
       schema:
         type: integer
-    InboxId:
-      name: inbox_id
+    AccountId:
+      name: account_id
       in: path
       required: true
       schema:

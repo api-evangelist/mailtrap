@@ -117,85 +117,6 @@ paths:
       description: Mailtrap management API
 components:
   schemas:
-    BatchResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/SendResponse'
-    BatchMessage:
-      type: object
-      properties:
-        from:
-          $ref: '#/components/schemas/Address'
-        to:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        cc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        bcc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        subject:
-          type: string
-        text:
-          type: string
-        html:
-          type: string
-        custom_variables:
-          type: object
-        template_variables:
-          type: object
-    BatchRequest:
-      type: object
-      required:
-      - base
-      - requests
-      properties:
-        base:
-          $ref: '#/components/schemas/SendRequest'
-        requests:
-          type: array
-          maxItems: 500
-          items:
-            $ref: '#/components/schemas/BatchMessage'
-    Address:
-      type: object
-      required:
-      - email
-      properties:
-        email:
-          type: string
-          format: email
-        name:
-          type: string
-    Attachment:
-      type: object
-      required:
-      - content
-      - filename
-      properties:
-        content:
-          type: string
-          description: Base64-encoded file content
-        filename:
-          type: string
-        type:
-          type: string
-        disposition:
-          type: string
-          enum:
-          - attachment
-          - inline
-        content_id:
-          type: string
     SendRequest:
       type: object
       required:
@@ -253,6 +174,85 @@ components:
           type: array
           items:
             type: string
+    Address:
+      type: object
+      required:
+      - email
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+    BatchRequest:
+      type: object
+      required:
+      - base
+      - requests
+      properties:
+        base:
+          $ref: '#/components/schemas/SendRequest'
+        requests:
+          type: array
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/BatchMessage'
+    BatchMessage:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/Address'
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        cc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        bcc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        subject:
+          type: string
+        text:
+          type: string
+        html:
+          type: string
+        custom_variables:
+          type: object
+        template_variables:
+          type: object
+    BatchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/SendResponse'
+    Attachment:
+      type: object
+      required:
+      - content
+      - filename
+      properties:
+        content:
+          type: string
+          description: Base64-encoded file content
+        filename:
+          type: string
+        type:
+          type: string
+        disposition:
+          type: string
+          enum:
+          - attachment
+          - inline
+        content_id:
+          type: string
     SendRequest_2:
       type: object
       required:

@@ -211,6 +211,12 @@ paths:
           description: Header collection
 components:
   parameters:
+    InboxId:
+      name: inbox_id
+      in: path
+      required: true
+      schema:
+        type: integer
     MessageId:
       name: message_id
       in: path
@@ -219,12 +225,6 @@ components:
         type: integer
     AccountId:
       name: account_id
-      in: path
-      required: true
-      schema:
-        type: integer
-    InboxId:
-      name: inbox_id
       in: path
       required: true
       schema:
