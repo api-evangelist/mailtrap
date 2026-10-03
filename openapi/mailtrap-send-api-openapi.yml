@@ -117,6 +117,46 @@ paths:
       description: Mailtrap management API
 components:
   schemas:
+    BatchMessage:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/Address'
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        cc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        bcc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        subject:
+          type: string
+        text:
+          type: string
+        html:
+          type: string
+        custom_variables:
+          type: object
+        template_variables:
+          type: object
+    BatchRequest:
+      type: object
+      required:
+      - base
+      - requests
+      properties:
+        base:
+          $ref: '#/components/schemas/SendRequest'
+        requests:
+          type: array
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/BatchMessage'
     SendRequest:
       type: object
       required:
@@ -165,15 +205,15 @@ components:
         template_variables:
           type: object
           additionalProperties: true
-    SendResponse:
+    BatchResponse:
       type: object
       properties:
         success:
           type: boolean
-        message_ids:
+        responses:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/SendResponse'
     Address:
       type: object
       required:
@@ -184,55 +224,15 @@ components:
           format: email
         name:
           type: string
-    BatchRequest:
-      type: object
-      required:
-      - base
-      - requests
-      properties:
-        base:
-          $ref: '#/components/schemas/SendRequest'
-        requests:
-          type: array
-          maxItems: 500
-          items:
-            $ref: '#/components/schemas/BatchMessage'
-    BatchMessage:
-      type: object
-      properties:
-        from:
-          $ref: '#/components/schemas/Address'
-        to:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        cc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        bcc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-        subject:
-          type: string
-        text:
-          type: string
-        html:
-          type: string
-        custom_variables:
-          type: object
-        template_variables:
-          type: object
-    BatchResponse:
+    SendResponse:
       type: object
       properties:
         success:
           type: boolean
-        responses:
+        message_ids:
           type: array
           items:
-            $ref: '#/components/schemas/SendResponse'
+            type: string
     Attachment:
       type: object
       required:
