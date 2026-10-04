@@ -117,6 +117,26 @@ paths:
       description: Mailtrap management API
 components:
   schemas:
+    Attachment:
+      type: object
+      required:
+      - content
+      - filename
+      properties:
+        content:
+          type: string
+          description: Base64-encoded file content
+        filename:
+          type: string
+        type:
+          type: string
+        disposition:
+          type: string
+          enum:
+          - attachment
+          - inline
+        content_id:
+          type: string
     BatchMessage:
       type: object
       properties:
@@ -144,19 +164,15 @@ components:
           type: object
         template_variables:
           type: object
-    BatchRequest:
+    SendResponse:
       type: object
-      required:
-      - base
-      - requests
       properties:
-        base:
-          $ref: '#/components/schemas/SendRequest'
-        requests:
+        success:
+          type: boolean
+        message_ids:
           type: array
-          maxItems: 500
           items:
-            $ref: '#/components/schemas/BatchMessage'
+            type: string
     SendRequest:
       type: object
       required:
@@ -205,6 +221,19 @@ components:
         template_variables:
           type: object
           additionalProperties: true
+    BatchRequest:
+      type: object
+      required:
+      - base
+      - requests
+      properties:
+        base:
+          $ref: '#/components/schemas/SendRequest'
+        requests:
+          type: array
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/BatchMessage'
     BatchResponse:
       type: object
       properties:
@@ -223,35 +252,6 @@ components:
           type: string
           format: email
         name:
-          type: string
-    SendResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        message_ids:
-          type: array
-          items:
-            type: string
-    Attachment:
-      type: object
-      required:
-      - content
-      - filename
-      properties:
-        content:
-          type: string
-          description: Base64-encoded file content
-        filename:
-          type: string
-        type:
-          type: string
-        disposition:
-          type: string
-          enum:
-          - attachment
-          - inline
-        content_id:
           type: string
     SendRequest_2:
       type: object
