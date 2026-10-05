@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/mailtrap/mailtrap-openapi/HEAD/specs/email-sending-transactional.openapi.yml",
+ "requested_url": "https://raw.githubusercontent.com/mailtrap/mailtrap-openapi/HEAD/specs/email-sending-transactional.openapi.yml",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 29451,
+ "sha256": "5249c5eb23f3b37f944317058d6c93d832e8b21728b5db92bc2c5eaae7a00e41",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
