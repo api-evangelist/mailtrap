@@ -1,0 +1,16 @@
+# harvested from https://github.com/mailtrap/mailtrap-openapi/blob/4e2f059c72ebaeb85202188ca7f361e02d0341ad/.spectral.yaml on 2026-10-09 — a Spectral ruleset published in the provider's own GitHub repository (mailtrap/mailtrap-openapi); found by GitHub code search, fetched verbatim
+x-method: harvested
+x-stamped: 2026-10-09
+x-source-url: https://github.com/mailtrap/mailtrap-openapi/blob/4e2f059c72ebaeb85202188ca7f361e02d0341ad/.spectral.yaml
+extends: spectral:oas
+
+rules:
+  # Disable validation of examples for non-JSON media types (like jsonl)
+  # because Spectral tries to parse them as JSON and fails on multi-line/concatenated JSON
+  oas3-valid-media-example: off
+
+  # Disable due to upstream regression in @stoplight/spectral-rulesets >= 1.22.3
+  # (released 2026-05-21): the rule's JSONPath crashes nimma when traversing
+  # past `null` values in examples ("Cannot read properties of null").
+  duplicated-entry-in-enum: off
+

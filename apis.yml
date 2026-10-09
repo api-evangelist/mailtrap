@@ -145,6 +145,8 @@ common:
   url: https://docs.mailtrap.io/llms.txt
 - type: Blog
   url: https://mailtrap.io/blog/feed/
+- type: SpectralRules
+  url: https://github.com/mailtrap/mailtrap-openapi/blob/4e2f059c72ebaeb85202188ca7f361e02d0341ad/.spectral.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
