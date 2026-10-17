@@ -164,15 +164,15 @@ components:
           type: object
         template_variables:
           type: object
-    SendResponse:
+    BatchResponse:
       type: object
       properties:
         success:
           type: boolean
-        message_ids:
+        responses:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/SendResponse'
     SendRequest:
       type: object
       required:
@@ -234,15 +234,15 @@ components:
           maxItems: 500
           items:
             $ref: '#/components/schemas/BatchMessage'
-    BatchResponse:
+    SendResponse:
       type: object
       properties:
         success:
           type: boolean
-        responses:
+        message_ids:
           type: array
           items:
-            $ref: '#/components/schemas/SendResponse'
+            type: string
     Address:
       type: object
       required:
