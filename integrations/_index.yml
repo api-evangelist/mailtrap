@@ -22,25 +22,6 @@
     detected: '2026-10-12'
   status: not-a-workflow
   arazzo: null
-- slug: mailtrap-mcp-registry
-  label: MCP Registry
-  partner: mcp
-  partner_name: MCP Registry
-  type: register
-  channel: standard-directory
-  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=io.mailtrap
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: registry.modelcontextprotocol.io
-    spec_file: null
-    role: mcp-server-listing
-    registered_name: io.mailtrap/mcp
-    register_id: io.mailtrap/mcp
-    detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
-  status: not-a-workflow
-  arazzo: null
 - slug: mailtrap-zapier
   label: Zapier
   partner: zapier
@@ -64,6 +45,25 @@
     app_slug: mailtrap
     beta: false
     builder: unknown (not in the directory record)
+  status: not-a-workflow
+  arazzo: null
+- slug: mailtrap-mcp-registry
+  label: MCP Registry
+  partner: mcp
+  partner_name: MCP Registry
+  type: register
+  channel: standard-directory
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=io.mailtrap
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: io.mailtrap/mcp
+    register_id: io.mailtrap/mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
 - slug: mailtrap-airbyte
@@ -94,5 +94,27 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
+  status: not-a-workflow
+  arazzo: null
+- slug: mailtrap-claude-plugins-dev
+  label: claude-plugins.dev
+  partner_name: claude-plugins.dev
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://claude-plugins.dev/skills/@mailtrap/mailtrap-docs
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: claude-plugins.dev (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: mailtrap
+    matched_by: org-profile-domain:mailtrap.io
+    sample_skills:
+    - .SKILL.md
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
   status: not-a-workflow
   arazzo: null
