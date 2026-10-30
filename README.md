@@ -1,4 +1,4 @@
-# Mailtrap (mailtrap)
+# Mailtrap
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,85 +66,132 @@
 
 Mailtrap provides a RESTful email infrastructure API with high deliverability rates, an email sandbox for safe testing, and actionable analytics. It offers SDKs for smooth integration and supports both transactional sending and bulk email delivery.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/mailtrap/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/mailtrap/refs/heads/main/apis.yml)
+**Areas:** Email · Email Delivery · Email Sandbox · Email Testing · Transactional Email
 
-## Scope
+## Mailtrap on APIs.io
 
-- **Type:** Index
+Everything profiled for Mailtrap is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mailtrap/](https://apis.io/providers/mailtrap/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Email
-- Email Delivery
-- Email Sandbox
-- Email Testing
-- Transactional Email
+- [Mailtrap Inboxes API](https://apis.io/apis/mailtrap/mailtrap-inboxes-api/) — Manage sandbox inboxes
+- [Mailtrap Messages API](https://apis.io/apis/mailtrap/mailtrap-messages-api/) — Inspect captured messages
+- [Mailtrap Send API](https://apis.io/apis/mailtrap/mailtrap-send-api/) — Send transactional and bulk emails
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-06
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Mailtrap Email Sending API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Mailtrap Email Sending API allows sending transactional and bulk emails with high deliverability. It follows REST principles and supports authentication via API tokens, with all requests sent over HTTPS.
+- [Mailtrap Agentic Access](https://apis.io/agentic-access/mailtrap/mailtrap-agentic-access/)
 
-- **Human URL:** [https://mailtrap.io/email-api/](https://mailtrap.io/email-api/)
-- **Base URL:** `https://send.api.mailtrap.io`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Email
-- REST API
-- Transactional Email
+- [Mailtrap Email Sending API](https://apis.io/collections/mailtrap/open-mailtrap-email-api/)
+- [Mailtrap Email Sandbox API](https://apis.io/collections/mailtrap/open-mailtrap-email-sandbox/)
+- [Mailtrap Email Sending Inboxes API](https://apis.io/collections/mailtrap/open-mailtrap-inboxes-api/)
+- [Mailtrap Email Sending Inboxes Messages API](https://apis.io/collections/mailtrap/open-mailtrap-messages-api/)
+- [Mailtrap Email Sending Inboxes Send API](https://apis.io/collections/mailtrap/open-mailtrap-send-api/)
 
-#### Properties
+#### Governance rules (1)
 
-- [Documentation](https://docs.mailtrap.io/developers)
-- [Reference](https://api-docs.mailtrap.io/)
-- [Getting Started](https://docs.mailtrap.io/docs/sending-emails-overview)
-- [OpenAPI](openapi/mailtrap-email-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/mailtrap-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/mailtrap-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Spectral rulesets for the provider's contracts.
 
-### Mailtrap Email Sandbox API
+- [Mailtrap — mailtrap openapi rules](https://apis.io/rules/mailtrap/mailtrap-mailtrap-openapi-spectral-rules/)
 
-The Mailtrap Email Sandbox API provides a safe email testing environment to inspect and debug emails before sending to real recipients. Supports switching between sandbox and production modes in official SDKs.
+#### Security (2)
 
-- **Human URL:** [https://mailtrap.io/automated-email-testing/](https://mailtrap.io/automated-email-testing/)
-- **Base URL:** `https://sandbox.api.mailtrap.io`
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Mailtrap Authentication](https://apis.io/security/mailtrap/mailtrap-authentication/)
+- [Mailtrap Domain Security](https://apis.io/security/mailtrap/mailtrap-domain-security/)
 
-- Email Testing
-- QA
-- Sandbox
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://docs.mailtrap.io/docs/email-sandbox-overview)
-- [OpenAPI](openapi/mailtrap-email-sandbox-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/mailtrap-email-sandbox.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/mailtrap-email-sandbox.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Mailtrap Plans Pricing](https://apis.io/plans/mailtrap/mailtrap-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
 
-- [GitHub Organization](https://github.com/mailtrap)
-- [LinkedIn](https://www.linkedin.com/company/mailtrap)
-- [Portal](https://mailtrap.io/)
+Published request limits.
+
+- [Mailtrap Rate Limits](https://apis.io/rate-limits/mailtrap/mailtrap-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mailtrap Finops](https://apis.io/finops/mailtrap/mailtrap-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://mailtrap.io)
 - [Documentation](https://docs.mailtrap.io/)
-- [Sign Up](https://mailtrap.io/register/signup)
-- [Login](https://mailtrap.io/users/sign_in)
 - [Pricing](https://mailtrap.io/pricing/)
-- [Status Page](https://status.mailtrap.io/)
 - [Support](https://help.mailtrap.io/)
-- [Terms of Service](https://mailtrap.io/terms-of-use/)
-- [Privacy Policy](https://mailtrap.io/privacy-policy/)
-- [L L Ms Txt](https://docs.mailtrap.io/llms.txt)
+- [Blog](https://mailtrap.io/blog/feed/)
+- [Terms of service](https://mailtrap.io/terms-of-use/)
+- [Privacy policy](https://mailtrap.io/privacy-policy/)
+- [GitHub](https://github.com/mailtrap)
+- [Status](https://status.mailtrap.io/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 48.0 |
+| Contract governance | 15.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 52.4 |
+| Access clarity | 25.0 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mailtrap/](https://apis.io/providers/mailtrap/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mailtrap: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mailtrap/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
